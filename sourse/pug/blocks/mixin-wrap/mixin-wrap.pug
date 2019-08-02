@@ -44,46 +44,57 @@ mixin pugin()
 	//- 				i(class="fas fa-chevron-right")
 	.pagination-wrapper
 		ul.page-numbers
-			li
-				span.prev.page-numbers( )
-					img(src="img/svg/prev-double.svg", alt="")
-			li
-				span.prev.page-numbers( )
-					img(src="img/svg/prev.svg", alt="")
-			li
-				span.page-numbers.current  1
 			mixin li(n)
 				li
-					a.page-numbers(href='#')= n
+					if block
+						block
+					else
+						a.page-numbers(href='#')= n 
+			+li()
+				span.prev.page-numbers( )
+					img(src="img/svg/prev.svg", alt="")
+			+li()
+				span.prev.page-numbers( )
+					img(src="img/svg/prev-double.svg", alt="")
+			+li()
+				span.page-numbers.current  1
 			+li("1")
 			+li("2")
 			+li("3")
 			+li("4") 
-			li
+			+li()
 				a.next.page-numbers(href='#')
 					img(src="img/svg/next.svg", alt="")
-			li
+			+li()
 				a.next.page-numbers(href='#')
 					img(src="img/svg/next-double.svg", alt="")
+//- +pugin()
 //- /pugination
 //- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
 //- arrow for swiper-slider
 mixin arrow()
-	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
-		+icon('chevron-right')
 	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
 		+icon('chevron-left')
+	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+		+icon('chevron-right')
 //- /arrow for swiper-slider
 		
  
+
 //- scial buttons
 mixin soc()
 	+b.soc
 		mixin item()
-			+e.A.item(href="" target="_blank"): i(class="fab")&attributes(attributes)
-		+item()(class="fa-twitter")
-		+item()(class=" fa-facebook")
-		+item()(class="fa-google-plus")
+			+e.A.item(href="№" target="_blank")
+				block
+		+item()
+			+icon('fb')
+		
+		+item()
+			+icon('insta')
+		
+		+item()
+			+icon('vk')
 //- /scial buttons
 //- WP menu
 //- mixin mnu()
@@ -109,58 +120,41 @@ mixin mnu()
 
 
 
-//- picture with lazy
-mixin piclazy(bg, i, exp="jpg", media='576px')
-	// picture.lazy
-	picture.lazy
-		// webp images
-		if media !== 0
-			source(srcset="#" data-srcset=`img/@2x/webp/${i}.webp ` media=`(min-width: ${media})`, type="image/webp" )
-		
-			source(srcset="#" data-srcset=`img/@1x/webp/${i}.webp `  , type="image/webp")
-		else
-			source(srcset="#" data-srcset=`img/@2x/webp/${i}.webp `   type="image/webp" ) 
-		// /webp images 
-		if media !==0
-			source(srcset="#" data-srcset=`img/@2x/${i}.${exp}` media=`(min-width: ${media})`, type=`image/${exp}` )
-			 
-			source(srcset="#" data-srcset=`img/@1x/${i}.${exp}`   type=`image/${exp}`) 
-		else
-			source(srcset="#" data-srcset=`img/@2x/${i}.${exp}`  type=`image/${exp}` )
-		if bg == 'bg' 
-			img.object-fit-js(src=`#` data-src=`img/@2x/${i}.${exp}`, alt="") 
-		else
-			img(src=`#` data-src=`img/@2x/${i}.${exp}`, alt="") 
-	// /picture.lazy
 
-	
-mixin pic(bg, i, exp="jpg", media='576px' )
-	// picture
-	picture
-		// webp images
-		if media !== "0"
-			source(srcset=`img/@2x/webp/${i}.webp ` media=`(min-width: ${media} )`, type="image/webp" )
-			// crop 2x
-			source(srcset=`img/@1x/webp/${i}.webp `  type="image/webp")
+
+
+mixin pic( i,exp="jpg", bg, lazy="lazy", media='576px')
+	- const smpath2 = "2x"
+	- const smpath1 = "1x"
+	mixin src(i, exp, path , lazy, source, bg)
+		-const url= `img/@${path}/${i}.${exp}`
+		-const ifLazy = (lazy== "lazy")
+		-const src = ( ifLazy ? "#" : url)
+		-const data = (ifLazy ?  url  : null)
+
+		if source
+			source( srcset=src data-srcset= data  type=`image/${exp}`   )&attributes(attributes)
 		else
-			source(srcset=`img/@2x/webp/${i}.webp `  type="image/webp")  
-		// /webp images 
-		if media !== "0"
-			source(srcset=`img/@2x/${i}.${exp}` media=`(min-width:  ${media})` type=`image/${exp}` )
-			// crop 2x
-			source(srcset=`img/@1x/${i}.${exp}`   type=`image/${exp}`) 
-	 
-		if bg == 'bg' 
-			img.object-fit-js(src=`img/@2x/${i}.${exp}`, alt="") 
+			img(src=src data-src=data, class=(bg=="bg" ? "object-fit-js": null ) alt="")&attributes(attributes)
+	
+	// picture
+	picture( class= lazy)&attributes(attributes) 
+		if media !== 0 
+			each val in ["webp",exp] 
+				each val2 in [smpath2,smpath1] 
+					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
 		else 
-			img(src=`img/@2x/${i}.${exp}`, alt="") 
+			+src(i,'webp',smpath2+`/webp`,lazy,"source")
+			// /webp images  
+		+src(i, exp,smpath2, lazy,"",bg) 
 	// /picture
+
 		 
 //- /picture with lazy
 	example
-	+piclazy('consult','png','bg')
 	or
 	+piclazy('consult','png')
+//- +pic('','head-img-4',"")
 
 
  

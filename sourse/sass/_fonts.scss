@@ -1,6 +1,8 @@
 
 
-@include font-face ("roboto", "../fonts/Roboto-Regular/Roboto-Regular", $file-formats: woff2 woff ttf);
-@include font-face ("roboto", "../fonts/Roboto-Bold/Roboto-Bold", bold, $file-formats: woff2 woff ttf);
-@include font-face ("roboto", "../fonts/Roboto-Medium/Roboto-Medium", 500, $file-formats: woff2 woff ttf);
-@include font-face ("roboto", "../fonts/Roboto-Black/Roboto-Black", 900, $file-formats: woff2 woff ttf);
+@include font-face ("TT Norms", "../fonts/TTNorms-Regular/TTNorms-Regular", $file-formats: woff2);
+@include font-face ("TT Norms", "../fonts/TTNorms-Italic/TTNorms-Italic", 400, italic, $file-formats: woff2);
+@include font-face ("TT Norms", "../fonts/TTNorms-Bold/TTNorms-Bold", bold, $file-formats: woff2);
+@include font-face ("TT Norms", "../fonts/TTNorms-Light/TTNorms-Light", 300, $file-formats: woff2);
+@include font-face ("TT Norms", "../fonts/TTNorms-Medium/TTNorms-Medium", 500, $file-formats: woff2);
+@include font-face ("TT Norms", "../fonts/TTNorms-MediumItalic/TTNorms-MediumItalic", 500, italic,$file-formats: woff2);

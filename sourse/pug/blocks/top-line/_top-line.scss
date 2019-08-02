@@ -1,6 +1,111 @@
 .top-line {
+  padding-top: rem(29);
+  font-size: rem(15);
+  .row{
+    // align-items: center;
+  }
+  &__row{
+    justify-content: space-between;
+    @include media-breakpoint-down(md) {
 
-	
+      @include roww(10);
+    }
+  }
+
+	&__wrap{
+    @include media-breakpoint-up(sm){
+      // text-align: left;
+      padding-left: 0;
+
+    }
+    padding-left: rem(15);
+    // text-align: center;
+    @include roww(12);
+    @include media-breakpoint-up(lg) {
+
+      padding-right: rem(10);
+    }
+  }
+  &__caption{
+    max-width: rem(170);
+    font-weight: 500;
+    line-height: 1.47;
+    padding-top: rem(6);
+  }
+  &__small{
+    color: $secondary; 
+    font-size: rem(13px);
+    font-style: italic;
+    line-height: 1.54;
+    margin-bottom: rem(5);
+    padding-top: rem(2);
+  }
+  strong{
+    display: block;
+  }
+  &__text{
+    // padding-right: 20px;
+  }
+  .col-tel{
+    position: relative;
+    @include media-breakpoint-up(sm) {
+
+      padding-left: rem(35);
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      @include media-breakpoint-up(sm) {
+
+        left: 0;
+      }
+      left: rem(-30);
+      @include bg('tel.png');
+      background-size: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: rem(28px);
+      height: rem(28px);
+      top: rem(20); 
+    }
+  }
+
+  &__btn{
+    margin-top: rem(8);
+    @include media-breakpoint-up(xl) {
+
+      width: rem(194);
+    }
+      display: block;
+    @extend .btn;
+    @extend .btn-sm;
+    @extend .btn-white;
+  }
+  &__sm-link{
+    font-size: rem(13);
+    @extend .tdu;
+    @extend .ttu;
+    @extend .text-body;
+  }
+
+  &__link{
+    text-decoration: none !important;
+    font-weight: 500;
+    @extend .text-body;
+    
+    @extend .h6; 
+    
+  }
+  img{
+    @include media-breakpoint-up(lg) {
+
+      width: rem(130);
+    }
+    @include media-breakpoint-up(sm) {
+
+      width: rem(100);
+    }
+  }
 // 
 @include media-breakpoint-up(xl) {}
 
@@ -35,5 +140,15 @@
 
 @include media-breakpoint-down(sm) {}
 
-@include media-breakpoint-down(xs) {}
+@include media-breakpoint-down(xs) {
+  .container{
+    // max-width: rem(370);
+  }
+  .row{
+    // align-items: center;
+  }
+  &__col{
+    margin-bottom: rem(30);
+  }
+}
 }

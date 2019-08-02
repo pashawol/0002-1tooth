@@ -13,9 +13,45 @@
   vertical-align: middle;
   user-select: none;
   background-color: transparent;
-  border: $btn-border-width solid transparent;
+  position: relative;
+  z-index: 2;
+  &::after,
+  &:before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: rem(10); 
+    @include mt;
+    opacity: 0;
+  }
+  &:hover{
+    box-shadow:none;
+    &::before{
+      opacity: 1;
+    }
+    // background-image: linear-gradient(to top, lighten(#d4d4d4, 5%) 0%, #ffffff 100%);
+  }
+  &:focus{
+    &::after{
+      opacity: 1;
+    }
+    &::before{
+      opacity: 0;
+    }
+    
+  }
+  // border: $btn-border-width solid transparent;
+  border: none;
+  letter-spacing: rem(0.59px);
+  text-transform: uppercase;
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
-  @include transition($btn-transition);
+  padding-bottom: $input-btn-padding-y *.9;
+  // @include transition($btn-transition);
+  @include mt;
 
   @include hover {
     color: $body-color;
@@ -25,7 +61,7 @@
   &:focus,
   &.focus {
     outline: 0;
-    box-shadow: $btn-focus-box-shadow;
+    // box-shadow: $btn-focus-box-shadow;
   }
 
   // Disabled comes first so active can properly restyle
@@ -56,18 +92,55 @@ fieldset:disabled a.btn {
 // Alternate buttons
 //
 
-@each $color, $value in $theme-colors {
-  .btn-#{$color} {
-    @include button-variant($value, $value);
+// @each $color, $value in $theme-colors {
+//   .btn-#{$color} {
+//     @include button-variant($value, $value);
+//   }
+// }
+
+// @each $color, $value in $theme-colors {
+//   .btn-outline-#{$color} {
+//     @include button-outline-variant($value);
+//   }
+// }
+.btn-white{
+  
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.65);
+color: #1c1c1c;
+  box-shadow: 0 3px 0 #bcbcbc, inset 0 0 4px #f2f2f2; 
+  background-color: #fff;
+  background-image: linear-gradient(to top, #d4d4d4 0%, #ffffff 100%);
+  box-shadow: 0 3px 0 #bcbcbc, inset 0 0 4px #f2f2f2;  
+  &:before{ 
+    background-image: linear-gradient(to top, lighten(#d4d4d4, 5%) 0%, #ffffff 100%); 
+  } 
+  &::after{ 
+    background-image: linear-gradient(to top, darken(#d4d4d4, 5%) 0%, #ffffff 100%);
+  }
+  &:focus{
+    box-shadow: 0 3px 0 #bcbcbc, inset 0 0 4px #f2f2f2; 
+
   }
 }
-
-@each $color, $value in $theme-colors {
-  .btn-outline-#{$color} {
-    @include button-outline-variant($value);
+// }
+.btn-warning{
+  @extend .h5;
+  margin-bottom: 0;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.65);
+  color: #1c1c1c;
+  box-shadow: 0 4px 0 #eac143, inset 0 0 4px #ffe59a; 
+  background-color: #eac143;
+  background-image: $warning-gradient;
+  &:before{ 
+    background-image: linear-gradient(to top, #fbde8a 0%, #fff0bf 100%);
+  } 
+  &::after{ 
+    background-image: linear-gradient(to top, #fecc3c 0%, #ffe89e 100%);
+  }
+  &:focus{
+    box-shadow: 0 4px 0 #ddb331, inset 0 0 4px #ffe59a;
   }
 }
-
 
 //
 // Link buttons
@@ -104,12 +177,13 @@ fieldset:disabled a.btn {
 // Button Sizes
 //
 
-.btn-lg {
-  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
-}
+// .btn-lg {
+//   @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+// }
 
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  letter-spacing: rem(0.72px);
 }
 
 

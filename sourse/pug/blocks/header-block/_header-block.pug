@@ -1,7 +1,50 @@
 mixin header-block()
 	// start header-block
 	+b.header-block#header-block
+		
 		.container
-			h1 header-block
-			.row
+			+e.block
+				h1 
+					span.text-primary 
+						span.letter Б
+						| езбо
+						span.letter л
+						| езн
+						span.letter е
+						
+						| нна
+						span.letter я 
+					| имплантация зубов в&nbsp;Магнитогорске
+				ul
+					li 
+						strong Несъемный вид протезирования
+						| 
+						|  даже при полном отсутствии зубов
+					li 
+						strong Гарантия на&nbsp;установку
+						| 
+						|  импланта 3&nbsp;года, на&nbsp;сам имплант&nbsp;&mdash; бессрочно
+				+e.foot
+					.row
+						.col-sm-auto
+							+e.btn(href="#")  Рассчитать стоимость
+								span имплантации
+						.col-sm-auto
+							+e.stock-block(hewf="#")
+								+e.DIV.stock-block-title Акция!
+								+e.DIV.stock-block-link Имплантация
+									br 
+									| 
+									| под ключ за
+									br 
+									| 
+									strong 29 000 
+									| 
+									| руб.
+			+e.man.d-none.d-lg-block
+				+pic('doctor','png','','lazy',0)
+				+e.man-caption
+					+e.man-caption-name Кокорин Дмитрий Николаевич
+					+e.man-caption-prof Стоматолог-хирург
+					
 	// end header-block

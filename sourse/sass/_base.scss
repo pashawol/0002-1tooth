@@ -14,13 +14,24 @@ html {
 	background-position: center 0 ;
 	opacity: 0;
 	// opacity: 0.7;
+	
 } 
 
 
 
 body,
 html {
-	font-size: $em-base;
+	@include media-breakpoint-up(xl) {
+
+		font-size: $em-base;
+	}
+	
+	@include media-breakpoint-up(md) {
+
+		font-size: 15px;
+	}
+
+	font-size: 14px;
 	// @include font-size(1rem);
 }
 
@@ -43,17 +54,26 @@ body {
 }
 .section { 
 	@include bgs; 
-		padding-top: rem(40px);
+		padding-top: rem(25px);
 		padding-bottom: rem(40px); 
 }
 
 .section-title {
 	@extend .h2;
-	padding-bottom: em(10); 
-	>h2 {
-		font-size: inherit;
+	padding-bottom: em(18); 
+	h2 {
+		// font-size: inherit;
+		font-weight: 300;
+		line-height: 1.14;
+		span{
+			font-weight: 500;
+		}
 		
 		@include media-breakpoint-up(md) {}
+	}
+	&__text{
+		@extend .h4;
+		font-weight: normal;
 	}
 }
 
@@ -246,30 +266,42 @@ transition: all 0.3s ease-out;
 	transform: translateY(-50%);
 	z-index: 2;
 	cursor: pointer;
-
-	i {
-		line-height: 1;
-
+	width: rem(34px);
+	height: rem(34px);
+	border-radius: 50%;
+	box-shadow: inset 0 0 $h6-font-size 1px rgba(255, 255, 255, 0.32);
+	background-color: $primary;
+	background-image: linear-gradient(to top, $primary 0%, #c1fffb 100%);
+	text-align: center;
+	line-height: rem(11);
+	// vertical-align: middle;
+	padding-top: rem(7);
+	svg{
+		// line-height: 1;
+		width: rem(6px * 2);
+		height: rem(11px * 2);
 	}
 
 	cursor: pointer;
-
+	
 	&.l {
 		left: 0;
 		svg {
-			@include transform(rotateY(180deg));
+		 
+			margin-left: rem(-2);
 		}
 	}
-
+	
 	&.r {
+		svg {
+			@include transform(rotateY(180deg));
+			margin-left: rem(2);
+		}
 		right: 0;
 
 	}
 
-	svg {
-		width: 17px;
-		height: auto;
-	}
+ 
 }
 
 input,
@@ -436,8 +468,10 @@ picture{
 	display: block;
 	// display: flex;
 	width: 100%;
-	height: 100%;
- 
+	// height: 100%;
+	img{
+		@extend .res-i;
+	}
 	img.object-fit-js{
 		height: 100%;
 		width: 100%;
@@ -451,4 +485,19 @@ picture{
 	object-fit: cover;
 	object-position: top;
 	font-family: 'object-fit: cover; object-position: top;';
+}
+
+
+.picture-bg{
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.section-bg{
+	position: relative;
+	z-index: 2;
 }

@@ -1,0 +1,27 @@
+mixin s-stock()
+	// start s-stock
+	+b.SECTION.s-stock.section.block-with-lazy#s-stock&attributes(attributes)
+		.container 
+			.row
+				.col-xl-auto.col-lg-4.text-center
+					+pic('stock-img',"png")
+				.col-md
+					+e.wrap
+						h2 Акция
+						+e.strike 32 120 р.
+					+e.inner
+						+e.text Имплантация + коронка
+						+e.price Цена по акции  
+							| 
+							| 
+							strong 29 000 р
+						+e.small Количество имплантов ограничено!
+				.col
+					.h6.d-none.d-sm-block В стоимость входит:
+					ul
+						li Комплект имплантата SNUCONЕ (Юж. Корея) или AlphaBio (Израиль)
+						li Операция по&nbsp;установке имплантата
+						li Абатмент SNUCONЕ&nbsp;/ AlphaBio под коронку
+						li Протезирование зуба металлокерамической коронкой
+			+e.btn(href="#")  Записаться по акции
+	// end s-stock

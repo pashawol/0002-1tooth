@@ -3,6 +3,17 @@ extends layout/main.pug
 
 include ../blocks/s-content/_s-content.pug
 include ../blocks/s-contact/_s-contact.pug
+include ../blocks/s-advantages/_s-advantages.pug
+include ../blocks/s-about/_s-about.pug
+//- include ../blocks/s-form/_s-form.pug
+include ../blocks/s-rew/_s-rew.pug
+include ../blocks/s-steps/_s-steps.pug
+include ../blocks/s-prices/_s-prices.pug
+include ../blocks/s-specialist/_s-specialist.pug
+include ../blocks/s-calc/_s-calc.pug
+include ../blocks/s-faq/_s-faq.pug
+include ../blocks/s-q/_s-q.pug
+include ../blocks/s-stock/_s-stock.pug
 
 block title
 	title title
@@ -10,11 +21,22 @@ block title
 block pagecontent
  
 	//- +mob-mnu()
-	//- +header()
-	//- 	+top-line()
-	//- 	+top-nav()
-	//- +header-block()
+	+header()
+		+top-line()
+		//- +top-nav()
+		+header-block()
+	+s-advantages
+	+s-about
+	+s-stock
+	+s-form
+	+s-rew
+	+s-steps
+	+s-prices
+	+s-specialist
+	+s-calc
+	+s-faq
+	+s-q
+	+footer()
 	//- +s-form()
 	//- +s-contact()
-	//- +footer()
 

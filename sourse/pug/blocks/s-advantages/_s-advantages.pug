@@ -1,0 +1,30 @@
+mixin s-advantages()
+	// start s-advantages
+	+b.SECTION.s-advantages.section.block-with-lazy#s-advantages&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 
+					span.text-primary Каждый второй клиент 
+					| 
+					| приходит по&nbsp;рекомендации наших пациентов
+			.row
+				mixin item(i, t)
+					+e.col.col-lg-3.col-sm-6
+						+e.item
+							+pic('s-advantages-' + i,'png')
+							+e.caption
+								if t
+									+e.title= t
+								block
+					// /+e.col.col-3
+				+item('1','Проводим имплантацию безболезненно')
+					p Во&nbsp;время операции вы&nbsp;ничего не&nbsp;почувствуете, или ощутите лишь небольшое давление
+				+item('2')
+					+e.title Хирург-имплантолог в&nbsp;стоматологии с&nbsp;1994&nbsp;г.
+					p Поэтому в&nbsp;99.9% случаях имплантация проходит успешно 
+				+item('3','Даем увеличенную гарантию')
+					p Мы&nbsp;уверены в&nbsp;качестве работ и&nbsp;даем гарантию на&nbsp;установку импланта 3&nbsp;года. Гарантия на&nbsp;сам имлантат&nbsp;&mdash; бессрочная
+				+item('4')
+					+e.title Заботимся о&nbsp;своих пациентах, после установки
+					p  Раз в&nbsp;пол года приглашаем на&nbsp;профилактический осмотр полости рта
+	// end s-advantages

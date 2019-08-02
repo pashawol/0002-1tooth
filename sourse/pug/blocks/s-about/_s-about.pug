@@ -1,0 +1,48 @@
+mixin s-about()
+	// start s-about
+	+b.SECTION.s-about.block-with-lazy.section-bg#s-about&attributes(attributes)
+		+pic('s-about-bg','jpg','bg','lazy',0)(class="picture-bg d-none d-md-block")
+		.container.section
+			+b.section-title
+				h2 
+					span.text-primary Вы&nbsp;снова начнете
+					| 
+					| улыбаться&nbsp;&mdash; проблемы с&nbsp;зубами останутся в&nbsp;прошлом! 
+			+e.man
+				picture.lazy
+					source(srcset='#', data-srcset='img/@2x/webp/girl.webp', type='image/webp', media='(min-width:768px)')
+					source(srcset='#', data-srcset='img/@2x/webp/girl-sm.webp', type='image/webp')
+					source(srcset='#', data-srcset='img/@2x/girl.png', type='image/png', media='(min-width:768px)')
+					source(srcset='#', data-srcset='img/@2x/girl-sm.png', type='image/png')
+					img(src='img/@2x/girl.png', data-src='img/@2x/girl.png', alt='')
+
+				+e.label.d-lg-block.d-none Успешно справимся даже со&nbsp;сложными случаями
+				+e.man-caption
+					+e.man-caption-name Ткачук Елена Владимировна
+					+e.man-caption-prof Главный врач, стоматолог-ортопед
+			+e.text-block
+				p &laquo;Потеря даже одного зуба становится причиной 
+					| 
+					strong нарушения прикуса,
+					|
+					| убывания костной ткани, нарушения пищеварения, и&nbsp;возникновения постоянного психологического дискомфорта.
+
+				p Избежать негативных последствий можно с&nbsp;помощью 
+					| 
+					strong имплантации зубов
+					|. Главное&nbsp;&mdash; её&nbsp;сделать вовремя, тогда процесс будет простым и&nbsp;недорогим.
+
+				p 
+					| 
+					strong Имплантация&nbsp;&mdash;
+					|
+					| лучший способ восстановления одного или нескольких отсутствующих зубов&raquo;
+			+e.slider-wrap.gal
+				+e.slider
+					- for (var x = 1; x < 4; x++)
+						+e.slide
+							+e.img-wrap(href=`img/@2x/sert-1.jpg`)
+								picture.source( srcset=`img/@2x/webp/sert-${x}.webp`  type="image/webp")
+								img.res-i(src="#" data-lazy=`img/@2x/sert-${x}.jpg` , alt="")
+			 
+	// end s-about

@@ -1,5 +1,11 @@
 .header{
-	
+  // @include bgs;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;  
+  
+  // @include bg("head-bg.jpg");
   // 
   @include media-breakpoint-up(xl) {}
 
