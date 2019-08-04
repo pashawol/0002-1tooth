@@ -84,16 +84,31 @@
 			max-width: rem(305);
 		}
 		line-height: 1.4;
-		&::before{
-			content: '';
-			position: absolute;
-			left: 15px;
-			top: rem(-3); 
-			@include bg('check-circle.png');
-			width: rem(32px);
-			height: rem(32px);
-			background-size: 100%;
-			background-repeat: no-repeat;
+		// &::before{
+		// 	@include bg('check-circle.png');
+		
+		// 	background-size: 100%;
+		// 	background-repeat: no-repeat;
+		// }
+	}
+	
+	&__icon-wrap{
+		content: '';
+		position: absolute;
+		left: 15px;
+		top: rem(-3); 
+		width: rem(32px);
+		height: rem(32px);
+		box-shadow: inset 0 0 4px #ffe59a;
+		background-color: #d1a794;
+		background-image: $warning-gradient;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.icon{
+			font-size: rem(13);
+			filter: drop-shadow( 0 2px 0 #ffffff);
 		}
 	}
 

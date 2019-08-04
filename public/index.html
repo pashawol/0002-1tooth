@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png">
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#3361d8">
-    <link rel="stylesheet" href="libs/magnificPopup/magnific-popup.css">
+    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="libs/slick/slick.css">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
@@ -48,7 +48,12 @@
                 <div class="top-line__col col-sm-auto col-6 col-tel order-sm-last">
                   <div class="top-line__small">Есть вопросы? Звоните!
                   </div>
-                  <div class="top-line__text top-line__text--tel"><a class="top-line__link" href="tel:8351940-78-78">8 3519 40-78-78</a><br/><a class="top-line__link" href="tel:8951791-22-55">8 951 791-22-55</a>
+                  <div class="top-line__text top-line__text--tel">
+                    <div class="top-line__icon-wrap">
+                      <svg class="icon icon-telephone ">
+                        <use xlink:href="img/svg/sprite.svg#telephone"></use>
+                      </svg>
+                    </div><a class="top-line__link" href="tel:8351940-78-78">8 3519 40-78-78</a><br/><a class="top-line__link" href="tel:8951791-22-55">8 951 791-22-55</a>
                     <div class="d-xl-none"><a class="top-line__sm-link" href="#">Перезвоните мне</a>
                     </div>
                   </div>
@@ -79,10 +84,20 @@
             <div class="header-block__block">
               <h1> <span class="text-primary"> <span class="letter">Б</span>езбо<span class="letter">л</span>езн<span class="letter">е</span>нна<span class="letter">я </span></span>имплантация зубов в&nbsp;Магнитогорске</h1>
               <ul>
-                <li> <strong>Несъемный вид протезирования</strong> 
+                <li> 
+                  <div class="header-block__icon-wrap">
+                    <svg class="icon icon-check ">
+                      <use xlink:href="img/svg/sprite.svg#check"></use>
+                    </svg>
+                  </div><strong>Несъемный вид протезирования</strong> 
                    даже при полном отсутствии зубов
                 </li>
-                <li> <strong>Гарантия на&nbsp;установку</strong> 
+                <li> 
+                  <div class="header-block__icon-wrap">
+                    <svg class="icon icon-check ">
+                      <use xlink:href="img/svg/sprite.svg#check"></use>
+                    </svg>
+                  </div><strong>Гарантия на&nbsp;установку</strong> 
                    импланта 3&nbsp;года, на&nbsp;сам имплант&nbsp;&mdash; бессрочно
                 </li>
               </ul>
@@ -319,27 +334,258 @@
               на&nbsp;бесплатную* комплексную консультацию
             </div>
           </div>
-          <div class="row"></div>
+          <div class="row">
+            <div class="s-form__left-col col-lg-6 col-md-5">
+              <div class="s-form__head row d-none d-lg-flex">
+                <div class="col-xl-auto col-6">
+                  <div class="s-form__man">
+                    <!-- picture-->
+                    <picture class="lazy"> 
+                      <source srcset="#" data-srcset="img/@2x/webp/form-doctor.webp" type="image/webp" media="(min-width:576px)"/>
+                      <source srcset="#" data-srcset="img/@1x/webp/form-doctor.webp" type="image/webp"/>
+                      <source srcset="#" data-srcset="img/@2x/form-doctor.png" type="image/png" media="(min-width:576px)"/>
+                      <source srcset="#" data-srcset="img/@1x/form-doctor.png" type="image/png"/><img src="#" data-src="img/@2x/form-doctor.png" alt=""/>
+                    </picture>
+                    <!-- /picture-->
+                  </div>
+                </div>
+                <div class="col">
+                  <ul>
+                    <li>
+                      Доктор  <strong>произведет осмотр  </strong> 
+                      состояния полости рта
+                    </li>
+                    <li>
+                      Вместе с&nbsp;вами  <strong>составит персональный план лечения  </strong> 
+                      и&nbsp;подберет имплантат, который необходим именно вам
+                    </li>
+                    <li> <strong>Рассчитает стоимость  </strong> 
+                      лечения
+                    </li>
+                    <li>При необходимости  <strong>назначит&nbsp;консультацию  </strong> 
+                      узких специалистов: терапевта, ортопеда
+                    </li>
+                  </ul>
+                  <div class="s-form__man-caption"><strong>Дмитрий Николаевич, </strong><br/> 
+                    стоматолог-хирург
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-auto">
+                  <div class="s-form__strike">1 500 р.
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="s-form__title">
+                    При имплантации в&nbsp;нашей клинике &mdash;  <strong class="text-primary">комплексная консультация 0&nbsp;р.*</strong>
+                  </div>
+                  <div class="s-form__text">Сумма в&nbsp;размере 1500 рублей будет вычтена из&nbsp;общей стоимости имплантации. Предложение не&nbsp;распростроняется на&nbsp;акцию
+                  </div>
+                </div>
+              </div>
+              <div class="s-form__foot row">
+                <div class="col-auto d-none d-lg-block">
+                  <!-- picture-->
+                  <picture class="lazy"> 
+                    <source srcset="#" data-srcset="img/@2x/webp/form-photo2.webp" type="image/webp" media="(min-width:576px)"/>
+                    <source srcset="#" data-srcset="img/@1x/webp/form-photo2.webp" type="image/webp"/>
+                    <source srcset="#" data-srcset="img/@2x/form-photo2.png" type="image/png" media="(min-width:576px)"/>
+                    <source srcset="#" data-srcset="img/@1x/form-photo2.png" type="image/png"/><img src="#" data-src="img/@2x/form-photo2.png" alt=""/>
+                  </picture>
+                  <!-- /picture-->
+                </div>
+                <div class="col">
+                  <div class="s-form__foot-text"> 
+                    <div class="s-form__icon-wrap">
+                      <svg class="icon icon-exclamation-mark ">
+                        <use xlink:href="img/svg/sprite.svg#exclamation-mark"></use>
+                      </svg>
+                    </div>Дополнительно вам потребуется 
+                     <span class="text-primary">снимок  </span> 
+                    для определения клинической картины и&nbsp;составления оптимального плана лечения. Если у&nbsp;вас уже есть снимок, принесите его с&nbsp;собой на&nbsp;консультацию.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col order-md-last order-first">
+              <div class="form-wrap lazy-background">
+                <form>
+                  <div class="form-wrap__top-title"> <strong>Укажите контактные</strong> 
+                    данные и&nbsp;удобное время для звонка
+                  </div>
+                  <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямоа&nbsp;сейчас или в&nbsp;другое рабочее время, и&nbsp;запишет вас на&nbsp;осмотр стоматолога-хирурга.
+                  </div>
+                  <div class="form-wrap__text form-wrap__text--sm">Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
+                  </div>
+                  <input class="order" type="hidden" name="order"/>
+                  <div class="form-wrap__input-wrap">
+                    <label><span class="form-wrap__title">Как Вас зовут?</span><input class="form-wrap__input" type="text" placeholder="Иван" name="name" required="required"/>
+                    </label>
+                  </div>
+                  <!-- +e.input-wrap-->
+                  <div class="form-wrap__input-wrap">
+                    <label><span class="form-wrap__title">Введите Ваш номер телефона для связи</span><input class="form-wrap__input" type="tel" placeholder="Ваш номер телефона" name="tel" required="required"/>
+                    </label>
+                  </div>
+                  <!-- +e.input-wrap-->
+                  <div class="form-wrap__title"> Выберите время для звонка
+                  </div>
+                  <label class="custom-input-time"><input class="custom-input-time__input" type="checkbox" name="scr8-time"/><span class="custom-input-time__lab"></span><span class="custom-input-time__text custom-input-time__text--now"> <span class="d-none d-sm-inline">Позвонить сейчас</span><span class="d-sm-none">Сейчас</span></span><span class="custom-input-time__text custom-input-time__text--time"> <span class="d-none d-sm-inline">Позвонить по времени</span><span class="d-sm-none">По времени</span></span>
+                  </label>
+                  <div class="toggle-wrap-input-js">
+                    <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="text" placeholder="Например, 10 апреля в 14:00" name="time"/>
+                    </div>
+                    <!-- +e.input-wrap-->
+                  </div>
+                  <button class="form-wrap__btn" type="submit"> Записаться на комплексную <span>консультацию</span>
+                  </button>
+                  <div class="form-wrap__polite">
+                    <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text">
+                      Принимаю  <a href="#" target="_blank">условия обработки </a> 
+                      персональных данных</span>
+                    </label>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- end s-form-->
       <!-- start s-rew-->
       <section class="s-rew section block-with-lazy" id="s-rew">
         <div class="container">
-          <div class="section-title text-center">
-            <h2>s-rew</h2>
+          <div class="section-title text-center"> 
+            <h2><span class="text-primary">Отзывы пациентов </span> 
+               после&nbsp;имплантации зубов
+            </h2>
           </div>
-          <div class="row"></div>
+          <div class="s-rew__row">
+            <div class="s-rew__col">
+              <div class="row">
+                <div class="col"><a class="s-rew__img-wrap" data-fancybox="data-fancybox" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span class="s-rew__time">5 минут 30 сек.</span>
+                  <picture><img class="object-fit-js" src="#" data-lazy="img/@2x/rew-1.jpg" alt=""/></picture><span class="s-rew__play"></span></a>
+                </div>
+                <div class="s-rew__caption col-12">
+                  <div class="s-rew__title">Было не больно
+                  </div>
+                  <div class="s-rew__text">«Совсем ничего не чувствовала ни во время операции, ни после»
+                  </div>
+                  <div class="s-rew__name">Анна Иванова
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="s-rew__col">
+              <div class="row">
+                <div class="col"><a class="s-rew__img-wrap" data-fancybox="data-fancybox" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span class="s-rew__time">5 минут 30 сек.</span>
+                  <picture><img class="object-fit-js" src="#" data-lazy="img/@2x/rew-2.jpg" alt=""/></picture><span class="s-rew__play"></span></a>
+                </div>
+                <div class="s-rew__caption s-rew__caption--sm col-lg-6">
+                  <div class="s-rew__title">Зубы, как родные
+                  </div>
+                  <div class="s-rew__text">«Мне поставили временные "зубы" на место отсутствующих на время, пока приживется имплант»
+                  </div>
+                  <div class="s-rew__name">Анна Иванова
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="s-rew__col">
+              <div class="row">
+                <div class="col"><a class="s-rew__img-wrap" data-fancybox="data-fancybox" href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"><span class="s-rew__time">5 минут 30 сек.</span>
+                  <picture><img class="object-fit-js" src="#" data-lazy="img/@2x/rew-3.jpg" alt=""/></picture><span class="s-rew__play"></span></a>
+                </div>
+                <div class="s-rew__caption s-rew__caption--sm col-lg-6">
+                  <div class="s-rew__title">Было не больно
+                  </div>
+                  <div class="s-rew__text">«Совсем ничего не чувствовала ни во время операции, ни после»
+                  </div>
+                  <div class="s-rew__name">Анна Иванова
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- end s-rew-->
       <!-- start s-steps-->
-      <section class="s-steps section block-with-lazy" id="s-steps">
+      <section class="s-steps section block-with-lazy section-bg" id="s-steps">
+        <!-- picture-->
+        <picture class="lazy picture-bg d-none d-md-block"> 
+          <source srcset="#" data-srcset="img/@2x/webp/s-about-bg.webp" type="image/webp"/>
+          <!-- /webp images  --><img class="object-fit-js" src="#" data-src="img/@2x/s-about-bg.jpg" alt=""/>
+        </picture>
+        <!-- /picture-->
         <div class="container">
-          <div class="section-title text-center">
-            <h2>s-steps</h2>
+          <div class="section-title"> 
+            <h2> <span class="text-primary">Как проходит</span> 
+              имплантация зубов?
+            </h2>
+            <div class="section-title__text"> <strong>Всего три простых шага</strong> 
+              к&nbsp;вашей здоровой улыбке
+            </div>
           </div>
-          <div class="row"></div>
+          <div class="s-steps__slider">
+            <div class="s-steps__slide">
+              <div class="s-steps__title">Подготовительный этап 
+              </div>
+              <div class="s-steps__body">
+                <div class="s-steps__sub-title">
+                  <svg class="icon icon-ruble ">
+                    <use xlink:href="img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                  <div><span class="text-primary">Оплачивается </span> 
+                     лечение зубов 
+                     <span class="text-primary">по факту</span>
+                  </div>
+                </div>
+                <div class="toggle-text-js">
+                  <p>Задача: подготовить полость рта к&nbsp;хирургическому вмешательству. Во&nbsp;рту должна быть чистота и&nbsp;отсутствие воспалений.</p>
+                  <p>При необходимости проводятся: комплекс гигиены, снятие налета, снятие зубного камня, лечение зубов</p>
+                </div>
+              </div>
+            </div>
+            <div class="s-steps__slide">
+              <div class="s-steps__title">Хирургический этап
+              </div>
+              <div class="s-steps__body">
+                <div class="s-steps__sub-title">
+                  <svg class="icon icon-ruble ">
+                    <use xlink:href="img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                  <div>
+                    от 1 недели  
+                    <div class="text-primary">Оплачивается операция</div>
+                  </div>
+                </div>
+                <div class="toggle-text-js">
+                  <p>Доктор проводит антисептическую&nbsp;обработку полости рта.</p>
+                  <p>
+                    Проводит <strong> безболезненную установку имплантата под местной анестезией, накладывает швы</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="s-steps__slide">
+              <div class="s-steps__title">Ортопедический этап 
+              </div>
+              <div class="s-steps__body">
+                <div class="s-steps__sub-title">
+                  <svg class="icon icon-ruble ">
+                    <use xlink:href="img/svg/sprite.svg#ruble"></use>
+                  </svg>
+                  <div>
+                    Через 2&nbsp;&mdash; 3&nbsp;мес. после хирургического этапа <span class="text-primary">Оплачивается протезирование</span></div>
+                </div>
+                <div class="toggle-text-js">
+                  <p>Чтобы коронка была погружена в&nbsp;мягкие ткани, устанавливается формирователь десны (Так пища не&nbsp;будет забиваться под коронку). На&nbsp;финальной стадии ортопед устанавливает на&nbsp;имплантат коронку.</p>
+                  <p>Время от&nbsp;консультации до&nbsp;финальной стадии может составить от&nbsp;4&nbsp;месяцев до&nbsp;полугода</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- end s-steps-->
@@ -421,7 +667,9 @@
         </div>
         <!-- +e.input-wrap--><input class="form-wrap__btn btn btn-block btn-warning mb-4" type="submit" value="Рассчитать"/>
         <div class="form-wrap__polite">
-          <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+          <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text">
+            Принимаю  <a href="#" target="_blank">условия обработки </a> 
+            персональных данных</span>
           </label>
         </div>
       </form>
@@ -435,7 +683,7 @@
     <!-- полифил для object-fit-->
     <script src="libs/object-fit-images/dist/ofi.min.js"></script>
     <!-- modal libs-->
-    <script src="libs/magnificPopup/jquery.magnific-popup.min.js"></script>
+    <script src="libs/fancybox/jquery.fancybox.min.js"></script>
     <!-- modal libs-->
     <!-- slider libs-->
     <script src="libs/slick/slick.min.js"></script>
@@ -444,6 +692,12 @@
     <script src="libs/svg4everybody-master/svg4everybody.min.js"></script>
     <!-- /for svg libs-->
     <script src="libs/jquery.inputmask.bundle.min.js"></script>
-    <script src="js/common.js"></script>
+    <script src="libs/jquery.morelines.min.js"></script>
+    <script src="js/common.js"></script><svg class="invisible">
+<linearGradient id="insta-gradient"  x1="0%" y1="0%"    x2="0%" y2="100%">
+<stop offset="0%"   stop-color="#c1fffb"/>
+<stop offset="100%"  stop-color="#00c6b9"/>
+</linearGradient>
+</svg>
   </body>
 </html>

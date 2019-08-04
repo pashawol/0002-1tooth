@@ -15,10 +15,54 @@
  		width: 100%;
 		display: block;
 		 
- 	}
+	 }
+	 &__title{
+		 @extend .h6;
+		 letter-spacing: rem(0.36px);
+		//  padding-bottom: ren();
+		display: block;
+		padding-bottom: rem(10);
+	 }
+
+	 &__btn{
+		@extend .btn;
+		@extend .btn-warning;
+		@extend .btn-block;
+
+		padding: 1.475rem .75rem; 
+		padding-bottom: .826rem;
+		// margin-bottom: rem(20);
+		// width: rem(274);
+
+		@include media-breakpoint-up(sm) {
+			margin-top: rem(30); 
+		 
+		}
+		margin-bottom: rem(22); 
+		span{
+			display: block;
+			@extend .h6;
+			font-weight: 300;
+			text-transform: none;
+			line-height: 1;
+			// position: relative;
+			@include media-breakpoint-up(sm) {
+
+				&::after{
+					content: url(../img/@2x/mirrow.png);
+					right: 0;
+					bottom: rem(5);
+					position: absolute;
+					pointer-events: none;
+				}
+			}
+		}
+	}
 }
 
-
+.toggle-wrap-input-js{
+	display: none;
+}
 .parsley-error{
 	border-image: none;
 	border: 2px solid  red !important;
@@ -71,7 +115,24 @@
 @include media-breakpoint-down(xs) {}
 
 
+.form-wrap__polite{
+	margin-left: auto;
+	margin-right: auto;
+	@include media-breakpoint-up(sm) {
 
+		max-width: rem(226);
+	}
+	max-width: rem(236);
+	text-align: center;
+	a{
+		color: #636363;
+		border-bottom: 1px solid;
+		text-decoration: none !important;
+		&:hover{
+			border-color: transparent;
+		}
+	}
+}
 
 .custom-input{
 	display: block;
@@ -80,8 +141,16 @@
 	margin-bottom: rem(20);
 	cursor: pointer;
 	position: relative;
+	@include media-breakpoint-up(sm) {
+
+		padding-left: rem(15px);
+	}
 	padding-left: rem(35px);
+
 	display: inline-block;
+	color: #636363;
+	font-size: rem(14);
+	// tac
 	&__input{
 		position: absolute;
 		// opacity: 0;
@@ -97,9 +166,16 @@
 		left: 0;
 		display: block;
 		top: rem(3); 
-		width: rem(20px);
-		height: rem(20px);
-		background-color: $primary;
+		@include media-breakpoint-up(sm) {
+
+			width: rem(12px);
+			height: rem(12px);
+		}
+		width: rem(22);
+		height: rem(22);
+		box-shadow: inset 0 0 4px $warning;
+		border-radius: 2px;
+		background-color: $light;
 		@include mt;
 		position: absolute; 
 		margin-right: 10px;
@@ -109,15 +185,25 @@
 			@include a-cent; 
 			opacity: 0;
 		}
-
+		
 	}
- 
+	
 	&__input[type="checkbox"] + &__lab{
 		&::after{ 
-			content:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z' class='st0'/%3E%3C/svg%3E");
+			content:   '';
 			position: absolute;
 			@include a-cent; 
 			opacity: 0;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			@include bg("verification-mark.png");
+			@include media-breakpoint-up(sm) {
+
+				width: rem(7);
+				height: rem(7);
+			}
+			width: rem(12);
+				height: rem(10);
 		}
 	}
 
@@ -127,18 +213,96 @@
 			border-radius: 50%;
 		}
 	}
-
-	&__input:checked + &__lab{
-		background-color: $success;
-		 
-		&::after{
 	
+	&__input:checked + &__lab{
+		// background-color: $success;
+		background-image: $warning-gradient;
+		box-shadow: inset 0 0 4px #ffe59a;
+		&::after{
+			
 			opacity: 1;
 		}
 	}
- 
+	
 }
 
+
+
+.custom-input-time{
+	cursor: pointer;
+	width: 100%;
+	@include media-breakpoint-up(sm) {
+
+		height: rem(69);
+	}
+	height: rem(52);
+	border-radius: 5px;
+	border-radius: 5px;
+border: 1px solid #f6f6f6;
+background-color: #ffffff;
+	display: flex !important;
+	font-weight: bold;
+	// justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 2;
+	position: relative;
+	overflow: hidden;
+	text-shadow: 0 2px 0 rgba(255, 255, 255, 0.53);
+color: #000000;
+font-size: rem(15);
+	&__text{
+		width: 50%;
+		display: block;
+		padding: 5px;
+		@include mt;
+		&--now{
+			// color: #ffffff;
+		}
+	}
+	&__input{
+		position: absolute;
+		// opacity: 0;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		padding: 0;
+		clip: rect(0 0 0 0 );
+		overflow: hidden;
+	}
+	&__lab{
+		 width: 50%;
+		position: absolute;
+		z-index: -1;
+		border-radius: 5px;
+		box-shadow: inset 0 0 4px #ffe59a;
+		border-radius: 5px 0 0 5px;
+		// border: 1px solid #f6f6f6;
+		background-color: #ffffff;
+		background-image: $warning-gradient;
+		height: 100%;
+		text-align: center;
+		left: 0;
+		@include mt;
+	}
+  
+	&__input:checked + &__lab{
+	 left: calc(50% + 5px);
+	 border-radius: 0 5px  5px 0;
+	}
+ 
+	&__input:checked ~ &__text--now{
+	//  left: calc(50% + 5px);
+	color: $body-color;
+	}
+ 
+	&__input:checked ~ &__text--time{
+	//  left: calc(50% + 5px);
+	// color: #fff;
+	}
+ 
+}
 
 
 

@@ -7,7 +7,7 @@
 // delete window.IntersectionObserver; // Fallback Testing
 
 document.addEventListener('DOMContentLoaded', function() {
-
+	var margin = "50000px 0px 50000px 0px";
 	var lazyImages = [].slice.call(document.querySelectorAll("picture.lazy img, picture.lazy source, img.lazy"));
 	var lazyBackgrounds = [].slice.call(document.querySelectorAll('.lazy-background'));
 	var lazyBackgroundsData = [].slice.call(document.querySelectorAll('[data-bg]'));
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			});
 		}, {
-			rootMargin: "500px 0px 500px 0px"
+			rootMargin: margin
 		});
 		lazyImages.forEach(function(lazyImage) {
 			lazyImageObserver.observe(lazyImage);
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}, {
-		rootMargin: "500px 0px 500px 0px"
+		rootMargin: margin
 	});
 	lazyBackgrounds.forEach(function(lazyBackground) {
 		lazyBackgroundObserver.observe(lazyBackground);
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 		});
 	}, {
-		rootMargin: "500px 0px 500px 0px"
+		rootMargin: margin
 	});
 	lazyBackgroundsData.forEach(function(lazyBackgroundData) {
 		lazyBackgroundDataObserver.observe(lazyBackgroundData);

@@ -2,8 +2,37 @@ mixin s-rew()
 	// start s-rew
 	+b.SECTION.s-rew.section.block-with-lazy#s-rew&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 s-rew
-				
-			.row
+			+b.section-title.text-center 
+				h2
+					span.text-primary Отзывы пациентов 
+					| 
+					|  после&nbsp;имплантации зубов
+			+e.row
+				mixin item(i)
+					+e.col
+						.row
+							.col
+								+e.img-wrap(data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk")
+									+e.time 5 минут 30 сек.
+									//- +pic('rew-'+i,'jpg','bg')
+									picture
+										img.object-fit-js(src='#', data-lazy=`img/@2x/rew-${i}.jpg`, alt='')
+									+e.play
+										//- +icon('play')
+							block
+				+item(1)
+					+e.caption.col-12
+						+e.title Было не больно
+						+e.text «Совсем ничего не чувствовала ни во время операции, ни после»
+						+e.name Анна Иванова
+				+item(2)
+					+e.caption--sm.col-lg-6
+						+e.title Зубы, как родные
+						+e.text «Мне поставили временные "зубы" на место отсутствующих на время, пока приживется имплант»
+						+e.name Анна Иванова
+				+item(3)
+					+e.caption--sm.col-lg-6
+						+e.title Было не больно
+						+e.text «Совсем ничего не чувствовала ни во время операции, ни после»
+						+e.name Анна Иванова
 	// end s-rew

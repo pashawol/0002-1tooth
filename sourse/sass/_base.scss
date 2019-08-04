@@ -21,6 +21,7 @@ html {
 
 body,
 html {
+	
 	@include media-breakpoint-up(xl) {
 
 		font-size: $em-base;
@@ -454,7 +455,31 @@ input::-webkit-inner-spin-button {
 	}
 }
 
-
+.slick-dots{
+	padding-top: rem(20);
+	li{
+		width: rem(11px);
+		height: rem(11px);
+		background-color: #ededed;
+		border-radius: 50%;
+		@include mt;
+		display: inline-block;
+		list-style-type: none;
+		margin-left: rem(4);
+		margin-right: rem(4);
+		cursor: pointer;
+		button{
+			display: none;
+		}
+		&.slick-active{
+			transform: scale(.7);
+		}
+		&.slick-active,
+		&:hover{
+			background-color: $primary;
+		}
+	}
+}
 
 
 @include media-breakpoint-up(lg) { 

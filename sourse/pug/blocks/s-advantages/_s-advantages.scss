@@ -106,7 +106,10 @@
 		
 	}
 	picture{
+		@include media-breakpoint-up(xl) {
 
+			min-height: rem(160)
+		}
 		@include media-breakpoint-between(sm, lg) {
 			height: rem(160);
 			text-align: center;

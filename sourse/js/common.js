@@ -59,7 +59,7 @@ jQuery(document).ready(function ($) {
 		dots: false,
 		speed: 600,
 		infinite: true,
-		loop: true,
+	 
 		arrows: true,
 		mobileFirst: true, 
 		prevArrow: arrr2,
@@ -75,35 +75,78 @@ jQuery(document).ready(function ($) {
 
     } ]
 	});
+	
+	$('.s-rew__row').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true,
+		speed: 600,
+		infinite: true,
+	 
+		arrows: true,
+		mobileFirst: true, 
+		prevArrow: arrr2,
+		nextArrow: arrl2,
+		responsive: [{
 
-	// $('.s-gal__slider\
-	// ,.slider-for2 ')
-	// 	.on('lazyLoaded', function (event, slick, image, imageSource) {
-	// 		image.parent().css('background-image', 'url(' + image.attr('src') + ')');
-	// 	});
-	// slider
-	// var swiper4 = new Swiper('.color-slider', {
-	// 	// slidesPerView: 5,
-	// 	slidesPerView: 'auto',
-	// 	watchOverflow: true,
-	// 	spaceBetween: 0,
-	// 	freeMode: true,
-	// 	watchOverflow: true,
-	// 	slidesPerGroup: 3,
+      breakpoint: 992,
+      settings: {
+				slidesToShow: 3, 
+				infinite: false,
+				loop: false,
+      }
 
-	// 	// centeredSlides: true,
-	// 	loop: true,
-	// 	loopFillGroupWithBlank: true,
-	// 	touchRatio: 0.2,
-	// 	slideToClickedSlide: true,
-	// 	freeModeMomentum: true,
-	// 	navigation: {
-	// 		nextEl: '.swiper-button-next',
-	// 		prevEl: '.swiper-button-prev',
-	// 	},
+		},
+		{
+      breakpoint: 768,
+      settings: {
+				slidesToShow: 2 
+      }
 
-	// });
-	// modal window
+		},
+
+	 ]
+	});
+	
+	$('.s-steps__slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: false,
+		speed: 600,
+		infinite: true,
+	 
+		arrows: true,
+		mobileFirst: true, 
+		prevArrow: arrr2,
+		nextArrow: arrl2,
+		responsive: [{
+
+      breakpoint: 992,
+      settings: {
+				slidesToShow: 3, 
+				infinite: false,
+				loop: false,
+      }
+
+		},
+		{
+      breakpoint: 768,
+      settings: {
+				slidesToShow: 2 
+      }
+
+		},
+
+	 ]
+	});
+
+	$('.toggle-text-js').moreLines({
+		linecount: 3,                   	// force moreLines after a certain number of lines. Default is 'auto' auto = 1
+	 
+		buttontxtmore: "Читать полностью",     	// Add your inner text for button
+		buttontxtless: "Скрыть",     	// Add your inner text for button
+		animationspeed: 600             	// Type your custom speed animation, by defaul is 'auto' auto = 1
+	});
  
 	// form
 	$("form").submit(function () { //Change
@@ -114,23 +157,32 @@ jQuery(document).ready(function ($) {
 			data: th.serialize()
 		}).success(function () {
 			// $.magnificPopup.close();
-			$.magnificPopup.open({
-				items: {
-					src: '#thanks', // can be a HTML string, jQuery object, or CSS selector
-					type: 'inline'
-				}
-			})
+			// $.magnificPopup.open({
+			// 	items: {
+			// 		src: '#thanks', // can be a HTML string, jQuery object, or CSS selector
+			// 		type: 'inline'
+			// 	}
+			// })
 			// window.location.replace("/thanks.html");
 			setTimeout(function () {
 				// Done Functions
 				th.trigger("reset");
 				// $.magnificPopup.close();
-				ym(53383120, 'reachGoal', 'zakaz');
+				// ym(53383120, 'reachGoal', 'zakaz');
 			}, 4000);
 		});
 		return false;
 	});
 	// /form
+
+	$('.custom-input-time__input').change(function(){
+		$(this).parents('form').find('.toggle-wrap-input-js').slideToggle().toggleClass('active');
+	})
+	
+	$('.form-wrap__polite').change(function(){
+		$(this).parents('form').find('.form-wrap__btn').toggleClass('disabled');
+	})
+
 });
 JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -140,50 +192,53 @@ JSCCommon = {
 	// /LazyFunction
 
 	magnificPopupCall: function () {
-		$('.popup-with-move-anim').magnificPopup({
-			type: 'inline',
+		// $('.popup-with-move-anim').magnificPopup({
+		// 	type: 'inline',
 
-			fixedContentPos: true,
-			fixedBgPos: true,
+		// 	fixedContentPos: true,
+		// 	fixedBgPos: true,
 
-			overflowY: 'auto',
+		// 	overflowY: 'auto',
 
-			closeBtnInside: true,
-			preloader: false,
+		// 	closeBtnInside: true,
+		// 	preloader: false,
 
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in',
-			tClose: 'Закрыть (Esc)',
-		});
+		// 	midClick: true,
+		// 	removalDelay: 300,
+		// 	mainClass: 'my-mfp-zoom-in',
+		// 	tClose: 'Закрыть (Esc)',
+		// });
 
-		// / modal window
+		// // / modal window
 
-		// modal галерея
-		$(".gal").each(function () {
+		// // modal галерея
+		// $(".gal").each(function () {
 
-			$(this).find("a").magnificPopup({
-				type: 'image',
-				closeOnContentClick: false,
-				closeBtnInside: false,
-				mainClass: 'mfp-with-zoom mfp-img-mobile',
-				tClose: 'Закрыть (Esc)',
-				image: {
-					verticalFit: true,
-					// titleSrc: function(item) {
-					//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
-					// }
+		// 	$(this).find("a").magnificPopup({
+		// 		type: 'image',
+		// 		closeOnContentClick: false,
+		// 		closeBtnInside: false,
+		// 		mainClass: 'mfp-with-zoom mfp-img-mobile',
+		// 		tClose: 'Закрыть (Esc)',
+		// 		image: {
+		// 			verticalFit: true,
+		// 			// titleSrc: function(item) {
+		// 			//   return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+		// 			// }
 
-				},
-				gallery: {
-					enabled: true,
-					tPrev: 'Назад (Кнопка влева)', // title for left button
-					tNext: 'Вперед (Кнопка вправа)', // title for right button
-					tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
-				}
-			});
-		})
-		// /modal галерея
+		// 		},
+		// 		gallery: {
+		// 			enabled: true,
+		// 			tPrev: 'Назад (Кнопка влева)', // title for left button
+		// 			tNext: 'Вперед (Кнопка вправа)', // title for right button
+		// 			tCounter: '<span class="mfp-counter">%curr% из %total%</span>',
+		// 		}
+		// 	});
+		// })
+		// // /modal галерея
+
+
+		
 	},
 	// /magnificPopupCall
  
