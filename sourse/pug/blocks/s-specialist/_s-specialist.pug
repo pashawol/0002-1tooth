@@ -1,9 +1,43 @@
 mixin s-specialist()
 	// start s-specialist
-	+b.SECTION.s-specialist.section.block-with-lazy#s-specialist&attributes(attributes)
-		.container
-			+b.section-title.text-center
-				h2 s-specialist
-				
-			.row
+	+b.SECTION.s-specialist.section-bg.block-with-lazy#s-specialist&attributes(attributes)
+		+pic('s-specialist-bg','jpg','bg','lazy')(class="picture-bg")
+		.container.section
+			+b.section-title
+				h2 
+					span.text-primary Доверьте имплантацию
+					| 
+					| зубов специалисту со&nbsp;стажем работы
+					| 
+					+e.SPAN.label Более 
+						| 
+						| 
+						+e.SPAN.big 25
+						| 
+						| лет
+			+e.man
+				picture.lazy
+					source(srcset='#', data-srcset='img/@2x/webp/s-specialist-img.webp', type='image/webp', media='(min-width:768px)')
+					source(srcset='#', data-srcset='img/@2x/webp/s-specialist-img-sm.webp', type='image/webp')
+					source(srcset='#', data-srcset='img/@2x/s-specialist-img.png', type='image/png', media='(min-width:768px)')
+					source(srcset='#', data-srcset='img/@2x/s-specialist-img-sm.png', type='image/png')
+					img(src='img/@2x/s-specialist-img.png', data-src='img/@2x/s-specialist-img.png', alt='')
+
+				+e.man-caption.d-none.d-md-block
+					+e.man-caption-name Кокорин Дмитрий Николаевич
+					+e.man-caption-prof Стоматолог-хирург
+			+e.text-block
+				p Кокорин Дмитрий Николаевич в&nbsp;1994 году закончил Самарский государственный медицинский институт. С&nbsp;1994 по&nbsp;1999 работал врачем в&nbsp;горнизонном госпитале. С&nbsp;1999 Работает в&nbsp;городской стоматологической больнице &#8470;&nbsp;3&nbsp;(отд. &#8470;&nbsp;2&nbsp;хирургии). Импалантцией занимается с&nbsp;2009&nbsp;года. 
+
+				p Ежегодно проходит обучение, сертифицируется по&nbsp;данной специальности, посещает конгрессы, симпозиумы, мастер классы, слушает как отечесвенных так и&nbsp;зарубежных лекторов. 
+
+				p Доктор , который осуществляет имплантацию, должен находится в&nbsp;зоне доступности, если проблемы возникают в&nbsp;период приживляемости, то&nbsp;врач сразу должен оказать помощь
+			+e.slider-wrap.gal
+				+e.slider
+					- for (var x = 1; x < 6; x++)
+						+e.slide
+							+e.img-wrap(href=`img/@2x/s-specialist-sert-${x}.jpg` data-fancybox="gallery2")
+								
+								img.object-fit-js.res-i(src="#" data-lazy=`img/@2x/s-specialist-sert-${x}.jpg` , alt="")
+ 
 	// end s-specialist

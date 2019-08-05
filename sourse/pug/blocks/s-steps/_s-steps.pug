@@ -1,7 +1,7 @@
 mixin s-steps()
 	// start s-steps
 	+b.SECTION.s-steps.section.block-with-lazy.section-bg#s-steps&attributes(attributes)
-		+pic('s-about-bg','jpg','bg','lazy',0)(class="picture-bg d-none d-md-block")
+		+pic('steps-bg','jpg','bg')(class="picture-bg ")
 		.container
 			+b.section-title 
 				h2 
@@ -12,43 +12,46 @@ mixin s-steps()
 					strong Всего три простых шага
 					| 
 					| к&nbsp;вашей здоровой улыбке
-			+e.slider
-				mixin item(t)
-					+e.slide
-						+e.title= t
-						+e.body
-							block
-				+item("Подготовительный этап ")
-					+e.sub-title
-						+icon("ruble")
-						div
-							span.text-primary Оплачивается 
-							| 
-							|  лечение зубов 
-							| 
-							span.text-primary по факту
-					.toggle-text-js
-						p Задача: подготовить полость рта к&nbsp;хирургическому вмешательству. Во&nbsp;рту должна быть чистота и&nbsp;отсутствие воспалений.
-						p При необходимости проводятся: комплекс гигиены, снятие налета, снятие зубного камня, лечение зубов
-				+item("Хирургический этап")
-					+e.sub-title
-						+icon("ruble")
-						div от 1 недели 
-							| 
-							.text-primary Оплачивается операция
-					.toggle-text-js
-						p Доктор проводит антисептическую&nbsp;обработку полости рта.
-						p Проводит 
-							|
-							strong  безболезненную установку имплантата под местной анестезией, накладывает швы
-				+item("Ортопедический этап ")
-					+e.sub-title
-						+icon("ruble")
-						div Через 2&nbsp;&mdash; 3&nbsp;мес. после хирургического этапа
-							|  
-							span.text-primary Оплачивается протезирование
-					.toggle-text-js
-						p Чтобы коронка была погружена в&nbsp;мягкие ткани, устанавливается формирователь десны (Так пища не&nbsp;будет забиваться под коронку). На&nbsp;финальной стадии ортопед устанавливает на&nbsp;имплантат коронку.
+			+e.slider-wrap
+				+e.slider
+					mixin item(t)
+						+e.slide
+							+e.title= t
+							+e.body
+								block
+					+item("Подготовительный этап ")
+						+e.sub-title
+							+icon("ruble")
+							div
+								span.text-primary Оплачивается 
+								| 
+								|  лечение зубов 
+								| 
+								span.text-primary по факту
+						.toggle-text-js
+							p Задача: подготовить полость рта к&nbsp;хирургическому вмешательству. Во&nbsp;рту должна быть чистота и&nbsp;отсутствие воспалений.
+							p При необходимости проводятся: комплекс гигиены, снятие налета, снятие зубного камня, лечение зубов
+					+item("Хирургический этап")
+						+e.sub-title
+							+icon("ruble")
+							div от&nbsp;1&nbsp;недели 
+								| 
+								.text-primary Оплачивается операция
+						.toggle-text-js
+							p Доктор проводит антисептическую&nbsp;обработку полости рта.
+							p Проводит 
+								|
+								strong  безболезненную установку имплантата под местной анестезией, накладывает швы
+					+item("Ортопедический этап ")
+						+e.sub-title
+							+icon("ruble")
+							div Через 2&nbsp;&mdash; 3&nbsp;мес. после хирургического этапа
+								|  
+								span.text-primary Оплачивается протезирование
+						.toggle-text-js
+							p Чтобы коронка была погружена в&nbsp;мягкие ткани, устанавливается формирователь десны (Так пища не&nbsp;будет забиваться под коронку). На&nbsp;финальной стадии ортопед устанавливает на&nbsp;имплантат коронку.
 
-						p Время от&nbsp;консультации до&nbsp;финальной стадии может составить от&nbsp;4&nbsp;месяцев до&nbsp;полугода
+							p Время от&nbsp;консультации до&nbsp;финальной стадии может составить от&nbsp;4&nbsp;месяцев до&nbsp;полугода
+				.control-block
+					.pagingInfo
 	// end s-steps

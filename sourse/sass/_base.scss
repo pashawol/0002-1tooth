@@ -17,7 +17,9 @@ html {
 	
 } 
 
-
+.em{
+	font-style: italic;
+}
 
 body,
 html {
@@ -525,4 +527,19 @@ picture{
 .section-bg{
 	position: relative;
 	z-index: 2;
+}
+
+.links{
+	color: $primary;
+	@include mt;
+	&:hover{
+		color: #44e2d8;
+	}
+	&:focus{
+		color: #01aba0;
+	}
+}
+
+a{
+	@include mt;
 }

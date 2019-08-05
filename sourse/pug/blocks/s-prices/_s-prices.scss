@@ -1,4 +1,315 @@
 .s-prices {
+	padding-top: rem(74);
+	.section-title{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: em(280);
+		position: relative;
+		padding-bottom: em(1);
+		margin-bottom: rem(0);
+		@include media-breakpoint-up(lg) {
+
+			&.visible{
+				
+				&::before,
+				&::after{
+					content: '';
+					position: absolute;
+					background-size: 100% 100%;
+					background-repeat: no-repeat;
+				}
+				&::before{
+					@include bg("price-before.png");
+					right: 100%;
+					top: 0;
+					width: rem(161);
+					height: rem(205);
+					
+				}
+				
+				&::after{
+					@include bg("price-after.png");
+					width: rem(256);
+					height: rem(289);
+					left: 100%;
+					top: 48%;
+				}
+			}
+	}
+
+		&__text{
+			padding-top: rem(11);
+			@include rfs(rem(21));
+			strong{
+				font-weight: 500;
+			}
+		}
+
+	}
+	.slick-track{
+		@include media-breakpoint-up(lg)  {
+
+			width: 100% !important;
+		}
+	}
+	&__slider-wrap{
+		@include media-breakpoint-up(lg) {
+
+			margin-left: -40px;
+			margin-right: -40px;
+		}
+		margin-left: -15px;
+		margin-right: -15px;
+		// margin-left: -25px;
+		// 	margin-right: -25px;
+		position: relative;
+	}
+	.slick-list{
+		// margin-left: -10px;
+		// margin-right: -10px;
+		@include media-breakpoint-up(lg) {
+
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+	}
+	&__slide{
+		font-size: rem(14);
+		@include media-breakpoint-up(lg) {
+
+			width: (100% / 3) !important;
+		}
+		// padding-left: 15px;
+		@include media-breakpoint-up(sm) {
+
+			padding: rem(30) 11px;
+		}
+		padding: rem(30) 0 ;
+		&:nth-child(n + 4){
+			// display: block;
+			@include media-breakpoint-up(lg) {
+
+				display: none;
+			}
+			
+			@include media-breakpoint-down(md) {
+
+				// display: none;
+				display: block !important;
+			}
+
+
+		}
+		// &:nth-child(2),
+	}
+	&__head{
+		padding: rem(30) rem(22) rem(28);
+		.icon{
+			font-size: rem(29);
+			color: #747474;
+			flex-shrink: 0;
+			margin-right: rem(14);
+		}
+	}	
+	&__express{
+		display: flex;
+		align-items: center;
+	}
+	&__body{
+		@include media-breakpoint-up(sm) {
+
+			padding-right: rem(5);
+		}
+		padding-right: rem(10);
+		padding-left: rem(10);
+	}
+	table{
+		width: 100%;
+		margin-bottom: rem(20);
+	}
+	td{
+		vertical-align: top;
+		padding: rem(10) rem(10);
+		padding-right: 0;
+		border-bottom: 1px solid #f3f3f3;
+		text-align: left;
+		line-height: 1.5;
+		&:nth-child(1){
+			
+			width: 56%;
+		}
+		&:nth-child(2){
+			font-weight: 500;
+			color: #000000;
+		}
+
+	}
+	tr:last-child td{
+		border: none;
+	}
+	&__title{
+		@extend .h5;
+		font-weight: 500;
+		margin-bottom: 0;
+	}
+
+	&__strike{
+		text-decoration: line-through;
+	}
+	.fw-500{
+		font-size: 1rem;
+	}
+	&__total-price{
+		@extend  h6;
+	}
+	&__small{
+		color: #797979;
+		font-size: rem(13);
+	}
+	&__footer{
+		border-radius: 0 76px $border-radius $border-radius;
+		border: 1px solid #f0f0f0;
+		background-color: #ffffff;
+		padding: rem(35) rem(24) rem(28) rem(32);
+		display: flex;
+		border-left: none;
+		border-bottom: none;
+		// border-right: none;
+		margin-right: -1px;
+		@include media-breakpoint-up(lg) {
+ 
+		}
+	 
+		position: relative;
+	}
+			&__icon-wrap{
+				margin-right: rem(12); 
+				position: relative;
+				top: rem(-5);
+				@include media-breakpoint-up(lg) {
+
+					// position: absolute;
+					// left: 0;
+					// top: 0;
+				}
+				margin-bottom: rem(15);
+			.icon{
+				font-size: rem(21);
+				// color: $primary;
+				fill: url(#insta-gradient);
+			}
+			}
+
+			&__item{
+				border-radius: $border-radius;
+				border: 1px solid #ededed;
+				background-color: #ffffff;
+				@include mt;
+
+				&:hover{
+					@include media-breakpoint-up(lg) {
+
+						box-shadow: 0 2px 25px 7px rgba(48, 48, 48, 0.05);
+					}
+					box-shadow: 0 2px 15px 7px rgba(48, 48, 48, 0.05);
+				}
+
+			}
+		&__item:hover 	&__footer{
+			@include media-breakpoint-up(lg) {
+
+				box-shadow: 0 2px 25px 7px rgba(48, 48, 48, 0.05);
+			}
+			box-shadow: 0 2px 15px 7px rgba(48, 48, 48, 0.05);
+
+			}
+
+			&__block{
+				margin-left: auto;
+				margin-right: auto;
+				// border: 1px solid #000;
+				box-shadow: 0 2px 25px 7px rgba(48, 48, 48, 0.05);
+				border-radius: $border-radius;
+				background-color: #ffffff;
+				max-width: rem(963);
+				margin-top: rem(58);
+				padding: rem(65) rem(85) rem(55);
+				z-index: 2;
+				&.visible{
+
+					position: relative;
+					&::after,
+					&::before{
+							content: '';
+							position: absolute;
+							background-size: 100%;
+							background-repeat: no-repeat;
+					}
+					&::before{
+						@include bg('hand.jpg');
+						bottom: 0;
+						// @include a-cent(x);
+						left: 28%;
+						width: rem(218px);
+						height: rem(117px);
+					}
+					
+					&::after{
+						@include bg('tooth.jpg');
+						// bottom: 0;
+						// @include a-cent(x);
+						right: 0;
+						top: 0;
+						width: rem(58px);
+						height: rem(132px);
+						// opacity: 0.04;
+					}
+
+				}
+				}
+			ul{
+				li{
+					list-style-type: none;
+					display: inline-block;
+					list-style-type: none;
+					padding-left: rem(18);
+					margin-right: rem(15);
+					position: relative;
+					padding-bottom: rem(15);
+					@extend .h6;
+					&::before{
+						content: '';
+						position: absolute;
+						left: 0;
+						top: rem(10);
+						width: rem(7px);
+						height: rem(7px);
+						border-radius: 50%;
+						box-shadow: inset 0 0 $h6-font-size 1px rgba(255, 255, 255, 0.32);
+						background-color: $primary;
+						background-image: linear-gradient(to top, $primary 0%, #c1fffb 100%);
+					}
+				}
+			}
+		&__toggle{
+			display: inline-block;
+			font-weight: 500;
+			@extend .h4;
+			@extend .links;
+			margin-bottom: rem(20);
+			border-bottom: 1px dashed;
+			position: relative;
+			margin-right: rem(30);
+			cursor: pointer;
+			.icon{
+				font-size: rem(14);
+				left: 100%;
+				position: absolute;
+				top: em(10);
+				margin-left: rem(10);
+			}
+		}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -24,4 +335,11 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+}
+.control-block2{
+	position: relative;
+	text-align: center;
+	max-width: rem(200);
+	margin-left: auto;
+	margin-right: auto;
 }

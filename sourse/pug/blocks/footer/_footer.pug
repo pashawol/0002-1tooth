@@ -1,6 +1,78 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			.row
+				.col-sm
+					+e.sm-title.text-sm-left.text-center Следите за новостями:
 
-		+pic('s-specialist-img','',"png")
+					+b.soc
+						+e.item(href="#" target="_blank") 
+							+e.icon-wrap--vk
+								+icon("vk")
+							| ВКонтакте
+						
+						+e.item(href="#" target="_blank") 
+							+e.icon-wrap--insta
+								+icon("insta")
+							| Instagram
+						
+				.col-sm
+					.row
+						.col-sm-12.col-6
+							+e.text--tel
+								+e.icon-wrap
+									+icon('telephone')
+								a.link(href="tel:8351940-78-78") 8 3519 40-78-78
+								br
+								a.link(href="tel:8951791-22-55") 8 951 791-22-55
+								br
+								+e.sm-link.link-modal(  data-src="#modal-call" href="javascript:;" data-order="Перезвонить в подвале") Перезвоните мне 
+						.col-sm-12.col-6
+							+e.text 
+								strong  Магнитогорск   Жукова,&nbsp;18   
+								| 
+								div.d-md-inline Пн&nbsp;&mdash; Пт: 
+								| 
+								| с&nbsp;9.00 до&nbsp;20.00
+								br
+								| Сб: с&nbsp;9.00 до&nbsp;14.00
+				.col-sm-auto.order-lg-first.text-sm-left.text-center
+					+e.logo
+						+pic('logo','png','','lazy',0)
+					+e.caption Безболезненная  имплантация зубов  в&nbsp;Магнитогорске
+				.col-lg-auto.col-12.order-sm-first.order-last.text-left
+					ul
+						li
+							+e.link(href="#") Лицензия № ЛО-74-01-003012
+						li
+							+e.link(href="#") Перечень платных медицинских услуг
+						li
+							+e.link(href="#") Порядок и условия предоставления мед помощи
+						li
+							+e.link(href="#") Сведения о мед. работниках
+						li
+							+e.link(href="#") Адреса и телефоны органов исполнит. власти РФ
+						li
+							+e.link(href="#") Положение об оказании платных медицинских услуг
+		+e.bottom.text-xl-left.text-center
+			.container
+				.row
+					+e.col.col-xl-5.order-xl-last
+						.row.justify-content-xl-start.justify-content-center
+							.col-auto
+								+e.link-body(href="#") Пользовательское соглашение
+							.col-auto
+								+e.link-body(href="#") Политика конфиденциальности
+					+e.col.col-xl-7 
+					
+						+e.company ООО &laquo;Эледент&raquo;&nbsp;/ ИНН 7455001836&nbsp;/ КПП 745501001&nbsp;/ ОГРН 1107455001851
+						
+				.row
+					+e.col.col-xl-7
+						| 455034, РФ, Челябинская область, г. Магнитогорск, ул. Жукова, 18. (неж. пом. &#8470;&nbsp;1)
+						
+					+e.col.col-xl-5
+						+e.develop 
+							.d-block.d-xl-inline Создание и продвижение сайта:  
+							| 
+							a(href="#") веб-студия «Барс»

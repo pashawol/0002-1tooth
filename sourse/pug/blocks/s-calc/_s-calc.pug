@@ -3,7 +3,36 @@ mixin s-calc()
 	+b.SECTION.s-calc.section.block-with-lazy#s-calc&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 s-calc
-				
+				h2 
+					span.text-primary Имплантация в&nbsp;&laquo;Зубной Фее&raquo;
+					| 
+					| &mdash;&nbsp;гарантия здоровой и&nbsp;красивой улыбки
 			.row
+				.col-xl-6.col-5.d-none.d-lg-block
+					mixin item(i)
+						+e.item.row
+							+e.img-wrap.col-auto
+								+pic('calc-'+i,'jpg','','lazy',0)
+							.col
+								block
+					+item("1")
+						+e.title Большой выбор систем имплантации
+						p Для вас в&nbsp;клинике представлена широкая линейка имплантационных систем и&nbsp;коронок из&nbsp;металлокерамики, керамики и&nbsp;диоксида циркония в&nbsp;разном ценовом сегменте.
+					+item("2")
+						+e.title Персональный подход к&nbsp;каждому пациенту
+						p Имплантационная система подбирается индивидуально под ситуацию с&nbsp;учётом пожеланий пациента. Так конструкция будет комфортно ощущаться во&nbsp;рту и&nbsp;прослужит максимально долго
+
+				.col
+					+e.row.row
+						.col-xl-7.col-sm-auto
+							
+							+jaw()
+						.col.text-center
+							+e.logo
+								+pic('logo2','png','','lazy')
+							+e.sub-title 
+								span.text-primary Отметье проблемные зубы
+								|
+								| и&nbsp;мы&nbsp;рассчитаем стоимость имплантации
+							+e.btn.link-modal(  data-src="#modal-calс" href="javascript:;" data-order="Узнать стоимость") Узнать стоимость
 	// end s-calc

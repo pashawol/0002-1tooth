@@ -2,8 +2,100 @@ mixin s-prices()
 	// start s-prices
 	+b.SECTION.s-prices.section.block-with-lazy#s-prices&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 s-prices
-				
-			.row
+			+b.section-title.text-center.lazy-background
+				h2 
+					span.text-primary Цены на&nbsp;популярные
+					| 
+					| системы&nbsp;имплантации зубов в&nbsp;нашей&nbsp;клинике
+					+e.text Лечим по&nbsp;ДМС и&nbsp;выдаем необходимый пакет документов  
+						strong для возврата&nbsp;13%
+			+e.slider-wrap
+				+e.slider
+					mixin sl()
+						+e.slide
+							+e.item
+								+e.head
+									.row
+										.col-6
+											+e.title  ANYONE
+											| Южная Корея
+										.col-6
+											+e.express
+												+icon("clock")
+												div Экспресс-имплантация 
+								+e.body
+									table
+										mixin tr(t1, t2)
+											tr
+												if t1
+													td.text-gray= t1
+												
+													if t2
+														td= t2
+													else
+														td
+															block
+												block 
+										+tr("Класс","Прагматичный")
+										+tr()
+											td.text-gray Гарантия
+												br
+												| на&nbsp;имплантацию
+											td 10 лет
+										+tr()
+											td.text-gray Скорость 
+												br
+												| приживления
+											td 12-20 недель
+										+tr()
+											td.text-gray Возможность
+												br
+												| экспресс-имплантации
+												br
+												|  —«Ни дня без зуба!»
+											td Возможна, при&nbsp;определенных условиях
+										+tr("Эстетика","Широкий выбор ортопедических компонентов, позволяет точно подобрать цвет")
+										+tr("Возможность избежать костной пластики",`В некоторых клинических случаях есть возможность избежать костной пластики`)
+										+tr()
+											td.text-gray Цена
+												br
+												| за&nbsp;хирургический этап
+											td 
+												+e.strike 20 141 р.
+												.fw-500 15 965 р.
+										+tr()
+											td.text-gray Цена под ключ
+												br
+												| - имплантат с установкой
+												br
+												| - формирователь десны
+												br
+												| - установка абатмента
+												br
+												| - коронка с установкой
+											td   
+												+e.strike 33 000 р.
+												+e.total-price.text-primary 45 000 р.
+												+e.small Количество имплантатов ограничено
+								+e.footer
+									+e.icon-wrap
+										+icon('exclamation-mark')
+									| Система нового поколения достаточно популярная в&nbsp;России и&nbsp;в&nbsp;мире, популярный выбор среди пациентов сети клиник
+
+
+											
+					- for (var x = 0; x < 5; x++)
+						+sl()
+				.control-block2.d-lg-none
+					.pagingInfo2
+			+e.block.lazy-background.d-none.d-lg-block
+				.row
+					.col-6
+						+e.toggle Еще 2 системы имплантации
+							+icon("down-arrow")
+						ul
+							li INNO 
+							li AnyRidge
+
+					.col-6 Будьте внимательны! Некоторые клиники не&nbsp;указывают стоимость имплантации &laquo;под ключ&raquo;, чтобы привлечь низкими ценами. Уточняйте, входят&nbsp;ли в&nbsp;стоимость все работы и&nbsp;материалы
 	// end s-prices

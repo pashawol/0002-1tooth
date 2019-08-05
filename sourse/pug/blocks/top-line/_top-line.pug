@@ -20,9 +20,9 @@ mixin top-line()
 						br
 						+e.link(href="tel:8951791-22-55") 8 951 791-22-55
 						.d-xl-none
-							+e.sm-link(href="#") Перезвоните мне
+							+e.sm-link.link-modal(  data-src="#modal-call" href="javascript:;" data-order="Заказать звонок в шапке") Перезвоните мне
 				+e.col.col-auto.d-none.d-xl-block.order-last
-					+e.btn(href="#") Перезвоните мне
+					+e.btn.link-modal(  data-src="#modal-call" href="javascript:;" data-order="Заказать звонок в шапке") Перезвоните мне
 				+col('Наш адрес:')
 					+e.text 
 						strong г. Магнитогорск

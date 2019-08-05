@@ -31,10 +31,10 @@ mixin header-block()
 				+e.foot
 					.row
 						.col-sm-auto
-							+e.btn(href="#")  Рассчитать стоимость
+							+e.btn.link-modal(  data-src="#modal-call" href="javascript:;" data-order="Расчитать стоимость в шапке")   Рассчитать стоимость
 								span имплантации
 						.col-sm-auto
-							+e.stock-block(hewf="#")
+							+e.stock-block.scroll-link(href="#s-stock")
 								+e.DIV.stock-block-title Акция!
 								+e.DIV.stock-block-link Имплантация
 									br 

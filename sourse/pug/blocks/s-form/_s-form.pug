@@ -68,24 +68,11 @@ mixin s-form()
 							strong Укажите контактные
 							| 
 							| данные и&nbsp;удобное время для звонка
-						+e.text.h6 Администратор Ольга позвонит вам прямоа&nbsp;сейчас или в&nbsp;другое рабочее время, и&nbsp;запишет вас на&nbsp;осмотр стоматолога-хирурга.
+						+e.text.h6 Администратор Ольга позвонит вам прямо&nbsp;сейчас или в&nbsp;другое рабочее время, и&nbsp;запишет вас на&nbsp;осмотр стоматолога-хирурга.
 						+e.text--sm Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
-						input(type="hidden" class='order' name="order")
+						input(type="hidden" class='order' name="order" value="Получите персональный план")
 						+input("Иван","text",'Как Вас зовут?',"name")(required)
-						+input("Ваш номер телефона","tel",'Введите Ваш номер телефона для связи')(required)
-						+e.title  Выберите время для звонка
-						+b.LABEL.custom-input-time
-							+e.INPUT.input(type='checkbox', name='scr8-time', )
-							+e.SPAN.lab
-							+e.SPAN.text--now 
-								span.d-none.d-sm-inline Позвонить сейчас
-								span.d-sm-none Сейчас
-							+e.SPAN.text--time 
-								span.d-none.d-sm-inline Позвонить по времени
-								span.d-sm-none По времени
-						//- +input(" Ваш номер телефона","tel",'Введите Ваш номер телефона для связи')
-						.toggle-wrap-input-js
-							+input("Например, 10 апреля в 14:00","text",'','time')
+						+form-body()
 						+e.btn(type="submit")  Записаться на комплексную 
 							span консультацию
 						+polite

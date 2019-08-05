@@ -234,6 +234,8 @@
 	&__stock-block{
 		position: relative;
 		width: rem(248);
+		display: block;
+		text-decoration: none !important;
 		@include media-breakpoint-up(sm) {
 
 			color: #ffffff !important;

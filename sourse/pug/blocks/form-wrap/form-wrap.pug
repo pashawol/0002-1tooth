@@ -24,6 +24,8 @@ mixin input(placeholder,  t='text', label, name= t)
 mixin form-wrap()
 	+b.form-wrap&attributes(attributes)
 		form
+			input(type="hidden" class='utm_source' name='utm_source')
+			input(type="hidden" class='utm_term' name='utm_term')
 			block
 //- /wrapper for form
 
@@ -54,3 +56,20 @@ mixin polite()
 				a(href="#" target="_blank") условия обработки 
 				| 
 				| персональных данных
+
+mixin form-body()
+	
+	+input("Ваш номер телефона","tel",'Введите Ваш номер телефона для связи')(required)
+	+e.title  Выберите время для звонка
+	+b.LABEL.custom-input-time
+		+e.INPUT.input(type='checkbox', name='scr8-time', )
+		+e.SPAN.lab
+		+e.SPAN.text--now 
+			span.d-none.d-sm-inline Позвонить сейчас
+			span.d-sm-none Сейчас
+		+e.SPAN.text--time 
+			span.d-none.d-sm-inline Позвонить по времени
+			span.d-sm-none По времени
+	//- +input(" Ваш номер телефона","tel",'Введите Ваш номер телефона для связи')
+	.toggle-wrap-input-js
+		+input("Например, 10 апреля в 14:00","text",'','time')

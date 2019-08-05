@@ -220,6 +220,11 @@
 		border-radius: rem(12);
 		display: block;
 	}
+
+	&__slide img{
+		width: 100%;
+		// height: 100px;
+	}
 	@include media-breakpoint-up(lg) {
 		&__slider-wrap{
 			
@@ -246,8 +251,9 @@
 		}
 	}
 	&__slider-wrap{
+		z-index: 110;
 		@include media-breakpoint-down(md) {
-			max-width: rem(163 * 2);
+			// max-width: rem(163 * 2);
 			margin-left: rem(-10);
 		}
 		@include media-breakpoint-down(xs) {
@@ -259,7 +265,7 @@
 		.slick-slide{
 			@include media-breakpoint-down(md) {
 			a{
-				width: rem(143);
+				// width: rem(143);
 			}
 				padding: rem(10);
 			}

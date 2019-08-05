@@ -1,5 +1,48 @@
 .s-calc {
-		 
+	margin-top: rem(175);
+	.section-title{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: em(300);
+		padding-bottom: em(16);
+	}
+	&__item{
+		@include roww(6);
+		padding-top: rem(33);
+		margin-right: rem(-10 + -50);
+	 p{
+		 max-width: rem(370);
+	 }
+	}
+	&__title{
+			@extend .h5;
+			font-weight: 500;
+			padding-bottom: rem(6);
+	}
+	&__row{
+		.text-center{
+			align-self: center;
+			@extend .h6;
+			padding-bottom: rem(40);
+		}
+	}
+	&__logo{
+		// margin-top: rm(100);
+		margin-bottom: rem(20);
+	}
+	&__sub-title{
+		padding-bottom: rem(28);
+		line-height: 1.39;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: rem(240);
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-warning;
+		width: rem(201);
+		padding: rem(23) rem(10) rem(21);
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -23,5 +66,413 @@
 	@include media-breakpoint-down(md) {}
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
+	
+	.jaw-block{
+		@include media-breakpoint-up(sm) {
 
+			&.visible::before{
+				content: '';
+			@include bg("curve-calc.png");
+			position: absolute;
+			width: rem(127);
+			height: rem(56);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			bottom: rem(40);
+			left: 80%;
+		}
+	}
+		@include media-breakpoint-up(xl) {
+			margin-left: rem(20);
+		}
+		@include media-breakpoint-up(sm) {
+			margin-left: 0;
+			margin-bottom: 0;
+		}
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: rem(40);
+	}
+
+}
+
+.jaw-block{
+	width: rem(301);
+	height: rem(456);
+
+	position: relative;
+	&__tooth-number,
+	&__tooth-item{
+		position: absolute;
+		cursor: pointer;
+		
+	}
+	&.visible &__tooth-item{
+		&::before{
+			@include bg("tooth-bg.png"); 
+		 
+		}
+	}
+	&__tooth-item{
+		width: rem(29px);
+		height: rem(29px);
+		&::before{
+			content: '';
+			position: absolute; 
+			height: 100%;
+			width: 100%;
+			width: rem(29px);
+			height: rem(29px);
+			opacity: 0;
+			@include mt;
+		}
+		&.active{
+			&::before{
+
+				opacity: 1;
+			}
+		}
+	}
+	&__tooth-number{
+		color: #010101; 
+		font-size: rem(11px);
+		font-weight: 400;
+		line-height: 2.09;
+		width: $h5-font-size * .9;
+		height: $h5-font-size * .9;
+		border-radius: 4px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		@include mt;
+		&.active{
+			color: #ffffff;
+			background-color: $primary;
+		}
+	}
+	&__tooth-item:nth-child(#{1}){
+		top: rem(0);
+		left: rem(125);
+
+	}
+	&__tooth-number:nth-child(#{1}){
+		top: rem(28);
+		left: rem(134);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{3}){
+		top: rem(0+ 10  );
+		left: rem(125 - 30);
+
+	}
+	&__tooth-number:nth-child(#{3}){
+		top: rem(28  + 10  );
+		left: rem(134 - 15);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{5}){
+		top: rem(0+ 10 + 15 );
+		left: rem(125 - 30 - 16);
+
+	}
+	&__tooth-number:nth-child(#{5}){
+		top: rem(28  + 10  + 14 );
+		left: rem(134 - 15 - 10);
+	}
+	&__tooth-item:nth-child(#{7}){
+		top: rem(0+ 10 + 15  + 28);
+		left: rem(125 - 30 - 16 - 15);
+
+	}
+	&__tooth-number:nth-child(#{7}){
+		top: rem(28  + 10  + 14  + 20);
+		left: rem(134 - 15 - 10 - 10);
+	}
+	
+	&__tooth-item:nth-child(#{9}){
+		top: rem(0+ 10 + 15  + 28 + 25);
+		left: rem(125 - 30 - 16 - 15 - 10);
+
+	}
+	&__tooth-number:nth-child(#{9}){
+		top: rem(28  + 10  + 14  + 20 + 22);
+		left: rem(134 - 15 - 10 - 10 - 9);
+	}
+	
+	&__tooth-item:nth-child(#{11}){
+		top: rem(0+ 10 + 15  + 28 + 25 + 25);
+		left: rem(125 - 30 - 16 - 15 - 15);
+
+	}
+	&__tooth-number:nth-child(#{11}){
+		top: rem(28  + 10  + 14  + 20 + 22 + 35);
+		left: rem(134 - 15 - 10 - 10 - 9);
+	}
+	
+	&__tooth-item:nth-child(#{13}){
+		top: rem(0+ 10 + 15  + 28 + 25 + 35 + 30);
+		left: rem(125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{13}){
+		top: rem(28  + 10  + 14  + 20 + 22 + 35 + 30);
+		left: rem(134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{15}){
+		top: rem(0+ 10 + 15  + 28 + 25 + 35 + 30 + 35);
+		left: rem(125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{15}){
+		top: rem(28  + 10  + 14  + 20 + 22 + 35 + 30 + 28);
+		left: rem(134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{1 + 1}){
+		top: rem(0);
+		right: rem(-10 + 125);
+
+	}
+	&__tooth-number:nth-child(#{1 + 1}){
+		top: rem(28);
+		right: rem(-10 + 134);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{3 + 1}){
+		top: rem(0+ 10  );
+		right: rem(-10 + 125 - 30);
+
+	}
+	&__tooth-number:nth-child(#{3 + 1}){
+		top: rem(28  + 10  );
+		right: rem(-10 + 134 - 15);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{5 + 1}){
+		top: rem(0+ 10 + 15 );
+		right: rem(-10 + 125 - 30 - 16);
+
+	}
+	&__tooth-number:nth-child(#{5 + 1}){
+		top: rem(28  + 10  + 14 );
+		right: rem(-10 + 134 - 15 - 10);
+	}
+	&__tooth-item:nth-child(#{7 + 1}){
+		top: rem(0+ 10 + 15  + 28);
+		right: rem(-10 + 125 - 30 - 16 - 15);
+
+	}
+	&__tooth-number:nth-child(#{7 + 1}){
+		top: rem(28  + 10  + 14  + 20);
+		right: rem(-10 + 134 - 15 - 10 - 10);
+	}
+	
+	&__tooth-item:nth-child(#{9 + 1}){
+		top: rem(0+ 10 + 15  + 28 + 25);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10);
+
+	}
+	&__tooth-number:nth-child(#{9 + 1}){
+		top: rem(28  + 10  + 14  + 20 + 22);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 5);
+	}
+	
+	&__tooth-item:nth-child(#{11 + 1}){
+		top: rem(0+ 10 + 15  + 28 + 25 + 25);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10);
+
+	}
+	&__tooth-number:nth-child(#{11 + 1}){
+		top: rem(28  + 10  + 14  + 20 + 22 + 35);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 10);
+	}
+	
+	&__tooth-item:nth-child(1#{3 + 1 }){
+		top: rem(0+ 10 + 15  + 28 + 25 + 35 + 30);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(1#{3 + 1 }){
+		top: rem(28  + 10  + 14  + 20 + 22 + 35 + 30);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{15 + 1}){
+		top: rem(0+ 10 + 15  + 28 + 25 + 35 + 30 + 35);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{15 + 1}){
+		top: rem(28  + 10  + 14  + 20 + 22 + 35 + 30 + 28);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{1 + 16}){
+		bottom: rem(0);
+		left: rem(125);
+
+	}
+	&__tooth-number:nth-child(#{1 + 16}){
+		bottom: rem(28);
+		left: rem(134);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{3 + 16}){
+		bottom: rem(0+ 10  );
+		left: rem(125 - 30);
+
+	}
+	&__tooth-number:nth-child(#{3 + 16}){
+		bottom: rem(28  + 10  );
+		left: rem(134 - 15);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{5 + 16}){
+		bottom: rem(0+ 10 + 15 );
+		left: rem(125 - 30 - 16);
+
+	}
+	&__tooth-number:nth-child(#{5 + 16}){
+		bottom: rem(28  + 10  + 14 );
+		left: rem(134 - 15 - 10);
+	}
+	&__tooth-item:nth-child(#{7 + 16}){
+		bottom: rem(0+ 10 + 15  + 28);
+		left: rem(125 - 30 - 16 - 15);
+
+	}
+	&__tooth-number:nth-child(#{7 + 16}){
+		bottom: rem(28  + 10  + 14  + 20);
+		left: rem(134 - 15 - 10 - 10);
+	}
+	
+	&__tooth-item:nth-child(#{9 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25);
+		left: rem(125 - 30 - 16 - 15 - 10);
+
+	}
+	&__tooth-number:nth-child(#{9 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22);
+		left: rem(134 - 15 - 10 - 10 - 9);
+	}
+	
+	&__tooth-item:nth-child(#{11 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25 + 25);
+		left: rem(125 - 30 - 16 - 15 - 15);
+
+	}
+	&__tooth-number:nth-child(#{11 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22 + 35);
+		left: rem(134 - 15 - 10 - 10 - 9);
+	}
+	
+	&__tooth-item:nth-child(#{13 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25 + 35 + 30);
+		left: rem(125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{13 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22 + 35 + 30);
+		left: rem(134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{15 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25 + 35 + 30 + 35);
+		left: rem(125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{15 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22 + 35 + 30 + 28);
+		left: rem(134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{1 + 1 + 16}){
+		bottom: rem(0);
+		right: rem(-10 + 125);
+
+	}
+	&__tooth-number:nth-child(#{1 + 1 + 16}){
+		bottom: rem(28);
+		right: rem(-10 + 134);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{3 + 1 + 16}){
+		bottom: rem(0+ 10  );
+		right: rem(-10 + 125 - 30);
+
+	}
+	&__tooth-number:nth-child(#{3 + 1 + 16}){
+		bottom: rem(28  + 10  );
+		right: rem(-10 + 134 - 15);
+	}
+ 
+	
+	&__tooth-item:nth-child(#{5 + 1 + 16}){
+		bottom: rem(0+ 10 + 15 );
+		right: rem(-10 + 125 - 30 - 16);
+
+	}
+	&__tooth-number:nth-child(#{5 + 1 + 16}){
+		bottom: rem(28  + 10  + 14 );
+		right: rem(-10 + 134 - 15 - 10);
+	}
+	&__tooth-item:nth-child(#{7 + 1 + 16}){
+		bottom: rem(0+ 10 + 15  + 28);
+		right: rem(-10 + 125 - 30 - 16 - 15);
+
+	}
+	&__tooth-number:nth-child(#{7 + 1 + 16}){
+		bottom: rem(28  + 10  + 14  + 20);
+		right: rem(-10 + 134 - 15 - 10 - 10);
+	}
+	
+	&__tooth-item:nth-child(#{9 + 1 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10);
+
+	}
+	&__tooth-number:nth-child(#{9 + 1 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 5);
+	}
+	
+	&__tooth-item:nth-child(#{11 + 1 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25 + 25);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10);
+
+	}
+	&__tooth-number:nth-child(#{11 + 1 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22 + 35);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 10);
+	}
+	
+	&__tooth-item:nth-child(#{13 + 1  + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25 + 35 + 30);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{13 + 1  + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22 + 35 + 30);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
+	&__tooth-item:nth-child(#{15 + 1 + 16}){
+		bottom: rem(0+ 10 + 15  + 28 + 25 + 35 + 30 + 35);
+		right: rem(-10 + 125 - 30 - 16 - 15 - 10 - 13);
+
+	}
+	&__tooth-number:nth-child(#{15 + 1 + 16}){
+		bottom: rem(28  + 10  + 14  + 20 + 22 + 35 + 30 + 28);
+		right: rem(-10 + 134 - 15 - 10 - 10 - 10 - 2);
+	}
+	
 }

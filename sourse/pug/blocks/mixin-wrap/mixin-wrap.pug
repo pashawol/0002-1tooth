@@ -18,30 +18,7 @@ mixin breadcrumb(...items)
 		
 //- pugination
 mixin pugin()
-	//- nav(aria-label='...')
-	//- 	ul.pagination.justify-content-center
-	//- 		li.page-item.disabled
-	//- 			a.page-link(href='#', tabindex='-1') 
-	//- 				i(class="fas fa-chevron-left")
-	//- 		li.page-item.disabled
-	//- 			a.page-link.d-none.d-md-block(href='#', tabindex='-1') Назад
-
-	//- 		li.page-item
-	//- 			a.page-link(href='#') 1
-	//- 		li.page-item.active
-	//- 			a.page-link(href='#')
-	//- 				| 2 
-	//- 				span.sr-only (current)
-	//- 		li.page-item
-	//- 			a.page-link.page-link-more(href='#') ...
-	//- 		li.page-item
-	//- 			a.page-link(href='#') 3
-
-	//- 		li.page-item
-	//- 			a.page-link.d-none.d-md-block(href='#') Дальше
-	//- 		li.page-item
-	//- 			a.page-link(href='#') 
-	//- 				i(class="fas fa-chevron-right")
+ 
 	.pagination-wrapper
 		ul.page-numbers
 			mixin li(n)
@@ -67,11 +44,7 @@ mixin pugin()
 					img(src="img/svg/next.svg", alt="")
 			+li()
 				a.next.page-numbers(href='#')
-					img(src="img/svg/next-double.svg", alt="")
-//- +pugin()
-//- /pugination
-//- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
-//- arrow for swiper-slider
+					img(src="img/svg/next-double.svg", alt="") 
 mixin arrow()
 	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
 		+icon('chevron-left')
@@ -80,48 +53,6 @@ mixin arrow()
 //- /arrow for swiper-slider
 		
  
-
-//- scial buttons
-mixin soc()
-	+b.soc
-		mixin item()
-			+e.A.item(href="№" target="_blank")
-				block
-		+item()
-			+icon('fb')
-		
-		+item()
-			+icon('insta')
-		
-		+item()
-			+icon('vk')
-//- /scial buttons
-//- WP menu
-//- mixin mnu()
-//- 	- var nav= { "Наши работы":"#","Цены":"#","Калькулятор":"#","Акции":"#" ,"Заказать":"#"}
-//- 	ul.menu
-//- 		li.menu-item.menu-item-has-children
-//- 			a(href="#") О нас
-//- 			ul.sub-menu
-//- 				li.menu-item: a(href="#") Строительство загородных домов
-//- 				li.menu-item: a(href="#") Отделка загородных домов
-//- 				li.menu-item: a(href="#") Покраска деревянных домов
-//- 				li.menu-item: a(href="#") Штукатурные фасады загородных домов
-//- 		each linkPatch, linkName in nav
-//- 			li.menu-item: a(href="#")= linkName
-
-//- menu
-mixin mnu()
-	- var nav= {"Продукция ":"#","Услуги  ":"#","Подбор септика   ":"#","Акции ":"#"," О компании  ":"#"," Доставка и оплата ":"#"," Клиентам  ":"#"," Наши работы   ":"#","Контакты ":"#"}
-	+e.UL.nav
-		each linkPatch, linkName in nav
-			+e.LI.item: +e.A.link(href= linkPatch)= linkName
-//- /menu
-
-
-
-
-
 
 mixin pic( i,exp="jpg", bg, lazy="lazy", media='576px')
 	- const smpath2 = "2x"
@@ -148,20 +79,18 @@ mixin pic( i,exp="jpg", bg, lazy="lazy", media='576px')
 			// /webp images  
 		+src(i, exp,smpath2, lazy,"",bg) 
 	// /picture
-
-		 
-//- /picture with lazy
-	example
-	or
-	+piclazy('consult','png')
-//- +pic('','head-img-4',"")
-
-
  
-		 
-//- /picture
-	example
-	+piclazy('consult','png','bg')
-	or
-	+piclazy('consult','png')
-
+mixin jaw()
+	+b.jaw-block.lazy-background
+		+pic('jaw','png','','lazy',0)
+		mixin number(t)
+			+e.tooth-number(data-tooth-number= t)= t 
+		mixin in(t) 
+			+e.tooth-item(data-tooth-number= t)
+		- const array = ["11","21","12","22","13","23","14","24","15","25","16","26","17","27","18","28","41","31","42","32","43","33","44","34","45","35","46","36","47","37","48","38"]
+			div
+				each val in array
+					+in(val)
+			div
+				each val2 in array
+					+number(val2)

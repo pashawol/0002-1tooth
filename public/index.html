@@ -10,7 +10,7 @@
     <meta property="og:image" content="path/to/image.jpg">
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png">
     <!-- Custom Browsers Color-->
-    <meta name="theme-color" content="#3361d8">
+    <meta name="theme-color" content="#00c6b9">
     <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="libs/slick/slick.css">
     <link rel="stylesheet" href="css/main.min.css">
@@ -54,11 +54,11 @@
                         <use xlink:href="img/svg/sprite.svg#telephone"></use>
                       </svg>
                     </div><a class="top-line__link" href="tel:8351940-78-78">8 3519 40-78-78</a><br/><a class="top-line__link" href="tel:8951791-22-55">8 951 791-22-55</a>
-                    <div class="d-xl-none"><a class="top-line__sm-link" href="#">Перезвоните мне</a>
+                    <div class="d-xl-none"><a class="top-line__sm-link link-modal" data-src="#modal-call" href="javascript:;" data-order="Заказать звонок в шапке">Перезвоните мне</a>
                     </div>
                   </div>
                 </div>
-              <div class="top-line__col col-auto d-none d-xl-block order-last"><a class="top-line__btn" href="#">Перезвоните мне</a>
+              <div class="top-line__col col-auto d-none d-xl-block order-last"><a class="top-line__btn link-modal" data-src="#modal-call" href="javascript:;" data-order="Заказать звонок в шапке">Перезвоните мне</a>
               </div>
                 <div class="top-line__col col-sm-auto col-6">
                   <div class="top-line__small">Наш адрес:
@@ -103,17 +103,15 @@
               </ul>
               <div class="header-block__foot">
                 <div class="row">
-                  <div class="col-sm-auto"><a class="header-block__btn" href="#"> Рассчитать стоимость<span>имплантации</span></a>
+                  <div class="col-sm-auto"><a class="header-block__btn link-modal" data-src="#modal-call" href="javascript:;" data-order="Расчитать стоимость в шапке">  Рассчитать стоимость<span>имплантации</span></a>
                   </div>
-                  <div class="col-sm-auto">
-                    <div class="header-block__stock-block" hewf="#">
-                      <div class="header-block__stock-block-title">Акция!
-                      </div>
-                      <div class="header-block__stock-block-link">Имплантация<br/> 
-                        под ключ за<br/> <strong>29 000 </strong> 
-                        руб.
-                      </div>
+                  <div class="col-sm-auto"><a class="header-block__stock-block scroll-link" href="#s-stock">
+                    <div class="header-block__stock-block-title">Акция!
                     </div>
+                    <div class="header-block__stock-block-link">Имплантация<br/> 
+                      под ключ за<br/> <strong>29 000 </strong> 
+                      руб.
+                    </div></a>
                   </div>
                 </div>
               </div>
@@ -265,14 +263,11 @@
           </div>
           <div class="s-about__slider-wrap gal">
             <div class="s-about__slider">
-              <div class="s-about__slide"><a class="s-about__img-wrap" href="img/@2x/sert-1.jpg">
-                <picture class="source" srcset="img/@2x/webp/sert-1.webp" type="image/webp"></picture><img class="res-i" src="#" data-lazy="img/@2x/sert-1.jpg" alt=""/></a>
+              <div class="s-about__slide"><a class="s-about__img-wrap" href="img/@2x/sert-1.jpg" data-fancybox="gallery"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/sert-1.jpg" alt=""/></a>
               </div>
-              <div class="s-about__slide"><a class="s-about__img-wrap" href="img/@2x/sert-1.jpg">
-                <picture class="source" srcset="img/@2x/webp/sert-2.webp" type="image/webp"></picture><img class="res-i" src="#" data-lazy="img/@2x/sert-2.jpg" alt=""/></a>
+              <div class="s-about__slide"><a class="s-about__img-wrap" href="img/@2x/sert-2.jpg" data-fancybox="gallery"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/sert-2.jpg" alt=""/></a>
               </div>
-              <div class="s-about__slide"><a class="s-about__img-wrap" href="img/@2x/sert-1.jpg">
-                <picture class="source" srcset="img/@2x/webp/sert-3.webp" type="image/webp"></picture><img class="res-i" src="#" data-lazy="img/@2x/sert-3.jpg" alt=""/></a>
+              <div class="s-about__slide"><a class="s-about__img-wrap" href="img/@2x/sert-3.jpg" data-fancybox="gallery"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/sert-3.jpg" alt=""/></a>
               </div>
             </div>
           </div>
@@ -319,7 +314,7 @@
                 <li>Протезирование зуба металлокерамической коронкой</li>
               </ul>
             </div>
-          </div><a class="s-stock__btn" href="#"> Записаться по акции</a>
+          </div><a class="s-stock__btn link-modal" data-src="#modal-call" href="javascript:;" data-order="Записаться по акции"> Записаться по акции</a>
         </div>
       </section>
       <!-- end s-stock-->
@@ -411,14 +406,16 @@
             <div class="col order-md-last order-first">
               <div class="form-wrap lazy-background">
                 <form>
+                  <input class="utm_source" type="hidden" name="utm_source"/>
+                  <input class="utm_term" type="hidden" name="utm_term"/>
                   <div class="form-wrap__top-title"> <strong>Укажите контактные</strong> 
                     данные и&nbsp;удобное время для звонка
                   </div>
-                  <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямоа&nbsp;сейчас или в&nbsp;другое рабочее время, и&nbsp;запишет вас на&nbsp;осмотр стоматолога-хирурга.
+                  <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямо&nbsp;сейчас или в&nbsp;другое рабочее время, и&nbsp;запишет вас на&nbsp;осмотр стоматолога-хирурга.
                   </div>
                   <div class="form-wrap__text form-wrap__text--sm">Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
                   </div>
-                  <input class="order" type="hidden" name="order"/>
+                  <input class="order" type="hidden" name="order" value="Получите персональный план"/>
                   <div class="form-wrap__input-wrap">
                     <label><span class="form-wrap__title">Как Вас зовут?</span><input class="form-wrap__input" type="text" placeholder="Иван" name="name" required="required"/>
                     </label>
@@ -514,9 +511,11 @@
       <!-- start s-steps-->
       <section class="s-steps section block-with-lazy section-bg" id="s-steps">
         <!-- picture-->
-        <picture class="lazy picture-bg d-none d-md-block"> 
-          <source srcset="#" data-srcset="img/@2x/webp/s-about-bg.webp" type="image/webp"/>
-          <!-- /webp images  --><img class="object-fit-js" src="#" data-src="img/@2x/s-about-bg.jpg" alt=""/>
+        <picture class="lazy picture-bg "> 
+          <source srcset="#" data-srcset="img/@2x/webp/steps-bg.webp" type="image/webp" media="(min-width:576px)"/>
+          <source srcset="#" data-srcset="img/@1x/webp/steps-bg.webp" type="image/webp"/>
+          <source srcset="#" data-srcset="img/@2x/steps-bg.jpg" type="image/jpg" media="(min-width:576px)"/>
+          <source srcset="#" data-srcset="img/@1x/steps-bg.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/steps-bg.jpg" alt=""/>
         </picture>
         <!-- /picture-->
         <div class="container">
@@ -528,62 +527,67 @@
               к&nbsp;вашей здоровой улыбке
             </div>
           </div>
-          <div class="s-steps__slider">
-            <div class="s-steps__slide">
-              <div class="s-steps__title">Подготовительный этап 
-              </div>
-              <div class="s-steps__body">
-                <div class="s-steps__sub-title">
-                  <svg class="icon icon-ruble ">
-                    <use xlink:href="img/svg/sprite.svg#ruble"></use>
-                  </svg>
-                  <div><span class="text-primary">Оплачивается </span> 
-                     лечение зубов 
-                     <span class="text-primary">по факту</span>
+          <div class="s-steps__slider-wrap">
+            <div class="s-steps__slider">
+              <div class="s-steps__slide">
+                <div class="s-steps__title">Подготовительный этап 
+                </div>
+                <div class="s-steps__body">
+                  <div class="s-steps__sub-title">
+                    <svg class="icon icon-ruble ">
+                      <use xlink:href="img/svg/sprite.svg#ruble"></use>
+                    </svg>
+                    <div><span class="text-primary">Оплачивается </span> 
+                       лечение зубов 
+                       <span class="text-primary">по факту</span>
+                    </div>
+                  </div>
+                  <div class="toggle-text-js">
+                    <p>Задача: подготовить полость рта к&nbsp;хирургическому вмешательству. Во&nbsp;рту должна быть чистота и&nbsp;отсутствие воспалений.</p>
+                    <p>При необходимости проводятся: комплекс гигиены, снятие налета, снятие зубного камня, лечение зубов</p>
                   </div>
                 </div>
-                <div class="toggle-text-js">
-                  <p>Задача: подготовить полость рта к&nbsp;хирургическому вмешательству. Во&nbsp;рту должна быть чистота и&nbsp;отсутствие воспалений.</p>
-                  <p>При необходимости проводятся: комплекс гигиены, снятие налета, снятие зубного камня, лечение зубов</p>
+              </div>
+              <div class="s-steps__slide">
+                <div class="s-steps__title">Хирургический этап
+                </div>
+                <div class="s-steps__body">
+                  <div class="s-steps__sub-title">
+                    <svg class="icon icon-ruble ">
+                      <use xlink:href="img/svg/sprite.svg#ruble"></use>
+                    </svg>
+                    <div>
+                      от&nbsp;1&nbsp;недели  
+                      <div class="text-primary">Оплачивается операция</div>
+                    </div>
+                  </div>
+                  <div class="toggle-text-js">
+                    <p>Доктор проводит антисептическую&nbsp;обработку полости рта.</p>
+                    <p>
+                      Проводит <strong> безболезненную установку имплантата под местной анестезией, накладывает швы</strong></p>
+                  </div>
+                </div>
+              </div>
+              <div class="s-steps__slide">
+                <div class="s-steps__title">Ортопедический этап 
+                </div>
+                <div class="s-steps__body">
+                  <div class="s-steps__sub-title">
+                    <svg class="icon icon-ruble ">
+                      <use xlink:href="img/svg/sprite.svg#ruble"></use>
+                    </svg>
+                    <div>
+                      Через 2&nbsp;&mdash; 3&nbsp;мес. после хирургического этапа <span class="text-primary">Оплачивается протезирование</span></div>
+                  </div>
+                  <div class="toggle-text-js">
+                    <p>Чтобы коронка была погружена в&nbsp;мягкие ткани, устанавливается формирователь десны (Так пища не&nbsp;будет забиваться под коронку). На&nbsp;финальной стадии ортопед устанавливает на&nbsp;имплантат коронку.</p>
+                    <p>Время от&nbsp;консультации до&nbsp;финальной стадии может составить от&nbsp;4&nbsp;месяцев до&nbsp;полугода</p>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="s-steps__slide">
-              <div class="s-steps__title">Хирургический этап
-              </div>
-              <div class="s-steps__body">
-                <div class="s-steps__sub-title">
-                  <svg class="icon icon-ruble ">
-                    <use xlink:href="img/svg/sprite.svg#ruble"></use>
-                  </svg>
-                  <div>
-                    от 1 недели  
-                    <div class="text-primary">Оплачивается операция</div>
-                  </div>
-                </div>
-                <div class="toggle-text-js">
-                  <p>Доктор проводит антисептическую&nbsp;обработку полости рта.</p>
-                  <p>
-                    Проводит <strong> безболезненную установку имплантата под местной анестезией, накладывает швы</strong></p>
-                </div>
-              </div>
-            </div>
-            <div class="s-steps__slide">
-              <div class="s-steps__title">Ортопедический этап 
-              </div>
-              <div class="s-steps__body">
-                <div class="s-steps__sub-title">
-                  <svg class="icon icon-ruble ">
-                    <use xlink:href="img/svg/sprite.svg#ruble"></use>
-                  </svg>
-                  <div>
-                    Через 2&nbsp;&mdash; 3&nbsp;мес. после хирургического этапа <span class="text-primary">Оплачивается протезирование</span></div>
-                </div>
-                <div class="toggle-text-js">
-                  <p>Чтобы коронка была погружена в&nbsp;мягкие ткани, устанавливается формирователь десны (Так пища не&nbsp;будет забиваться под коронку). На&nbsp;финальной стадии ортопед устанавливает на&nbsp;имплантат коронку.</p>
-                  <p>Время от&nbsp;консультации до&nbsp;финальной стадии может составить от&nbsp;4&nbsp;месяцев до&nbsp;полугода</p>
-                </div>
-              </div>
+            <div class="control-block">
+              <div class="pagingInfo"></div>
             </div>
           </div>
         </div>
@@ -592,20 +596,462 @@
       <!-- start s-prices-->
       <section class="s-prices section block-with-lazy" id="s-prices">
         <div class="container">
-          <div class="section-title text-center">
-            <h2>s-prices</h2>
+          <div class="section-title text-center lazy-background">
+            <h2> <span class="text-primary">Цены на&nbsp;популярные</span> 
+              системы&nbsp;имплантации зубов в&nbsp;нашей&nbsp;клинике
+              <div class="section-title__text">Лечим по&nbsp;ДМС и&nbsp;выдаем необходимый пакет документов  <strong>для возврата&nbsp;13%</strong>
+              </div>
+            </h2>
           </div>
-          <div class="row"></div>
+          <div class="s-prices__slider-wrap">
+            <div class="s-prices__slider">
+              <div class="s-prices__slide">
+                <div class="s-prices__item">
+                  <div class="s-prices__head">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="s-prices__title"> ANYONE
+                        </div>Южная Корея
+                      </div>
+                      <div class="col-6">
+                        <div class="s-prices__express">
+                          <svg class="icon icon-clock ">
+                            <use xlink:href="img/svg/sprite.svg#clock"></use>
+                          </svg>
+                          <div>Экспресс-имплантация </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s-prices__body">
+                    <table>
+                        <tr>
+                          <td class="text-gray">Класс</td>
+                          <td>Прагматичный</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Гарантия<br/>на&nbsp;имплантацию</td>
+                          <td>10 лет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Скорость <br/>приживления</td>
+                          <td>12-20 недель</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность<br/>экспресс-имплантации<br/> —«Ни дня без зуба!»</td>
+                          <td>Возможна, при&nbsp;определенных условиях</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Эстетика</td>
+                          <td>Широкий выбор ортопедических компонентов, позволяет точно подобрать цвет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность избежать костной пластики</td>
+                          <td>В некоторых клинических случаях есть возможность избежать костной пластики</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена<br/>за&nbsp;хирургический этап</td>
+                          <td> 
+                            <div class="s-prices__strike">20 141 р.
+                            </div>
+                            <div class="fw-500">15 965 р.</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена под ключ<br/>- имплантат с установкой<br/>- формирователь десны<br/>- установка абатмента<br/>- коронка с установкой</td>
+                          <td>  
+                            <div class="s-prices__strike">33 000 р.
+                            </div>
+                            <div class="s-prices__total-price text-primary">45 000 р.
+                            </div>
+                            <div class="s-prices__small">Количество имплантатов ограничено
+                            </div>
+                          </td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div class="s-prices__footer">
+                    <div class="s-prices__icon-wrap">
+                      <svg class="icon icon-exclamation-mark ">
+                        <use xlink:href="img/svg/sprite.svg#exclamation-mark"></use>
+                      </svg>
+                    </div>Система нового поколения достаточно популярная в&nbsp;России и&nbsp;в&nbsp;мире, популярный выбор среди пациентов сети клиник
+                  </div>
+                </div>
+              </div>
+              <div class="s-prices__slide">
+                <div class="s-prices__item">
+                  <div class="s-prices__head">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="s-prices__title"> ANYONE
+                        </div>Южная Корея
+                      </div>
+                      <div class="col-6">
+                        <div class="s-prices__express">
+                          <svg class="icon icon-clock ">
+                            <use xlink:href="img/svg/sprite.svg#clock"></use>
+                          </svg>
+                          <div>Экспресс-имплантация </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s-prices__body">
+                    <table>
+                        <tr>
+                          <td class="text-gray">Класс</td>
+                          <td>Прагматичный</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Гарантия<br/>на&nbsp;имплантацию</td>
+                          <td>10 лет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Скорость <br/>приживления</td>
+                          <td>12-20 недель</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность<br/>экспресс-имплантации<br/> —«Ни дня без зуба!»</td>
+                          <td>Возможна, при&nbsp;определенных условиях</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Эстетика</td>
+                          <td>Широкий выбор ортопедических компонентов, позволяет точно подобрать цвет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность избежать костной пластики</td>
+                          <td>В некоторых клинических случаях есть возможность избежать костной пластики</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена<br/>за&nbsp;хирургический этап</td>
+                          <td> 
+                            <div class="s-prices__strike">20 141 р.
+                            </div>
+                            <div class="fw-500">15 965 р.</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена под ключ<br/>- имплантат с установкой<br/>- формирователь десны<br/>- установка абатмента<br/>- коронка с установкой</td>
+                          <td>  
+                            <div class="s-prices__strike">33 000 р.
+                            </div>
+                            <div class="s-prices__total-price text-primary">45 000 р.
+                            </div>
+                            <div class="s-prices__small">Количество имплантатов ограничено
+                            </div>
+                          </td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div class="s-prices__footer">
+                    <div class="s-prices__icon-wrap">
+                      <svg class="icon icon-exclamation-mark ">
+                        <use xlink:href="img/svg/sprite.svg#exclamation-mark"></use>
+                      </svg>
+                    </div>Система нового поколения достаточно популярная в&nbsp;России и&nbsp;в&nbsp;мире, популярный выбор среди пациентов сети клиник
+                  </div>
+                </div>
+              </div>
+              <div class="s-prices__slide">
+                <div class="s-prices__item">
+                  <div class="s-prices__head">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="s-prices__title"> ANYONE
+                        </div>Южная Корея
+                      </div>
+                      <div class="col-6">
+                        <div class="s-prices__express">
+                          <svg class="icon icon-clock ">
+                            <use xlink:href="img/svg/sprite.svg#clock"></use>
+                          </svg>
+                          <div>Экспресс-имплантация </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s-prices__body">
+                    <table>
+                        <tr>
+                          <td class="text-gray">Класс</td>
+                          <td>Прагматичный</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Гарантия<br/>на&nbsp;имплантацию</td>
+                          <td>10 лет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Скорость <br/>приживления</td>
+                          <td>12-20 недель</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность<br/>экспресс-имплантации<br/> —«Ни дня без зуба!»</td>
+                          <td>Возможна, при&nbsp;определенных условиях</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Эстетика</td>
+                          <td>Широкий выбор ортопедических компонентов, позволяет точно подобрать цвет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность избежать костной пластики</td>
+                          <td>В некоторых клинических случаях есть возможность избежать костной пластики</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена<br/>за&nbsp;хирургический этап</td>
+                          <td> 
+                            <div class="s-prices__strike">20 141 р.
+                            </div>
+                            <div class="fw-500">15 965 р.</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена под ключ<br/>- имплантат с установкой<br/>- формирователь десны<br/>- установка абатмента<br/>- коронка с установкой</td>
+                          <td>  
+                            <div class="s-prices__strike">33 000 р.
+                            </div>
+                            <div class="s-prices__total-price text-primary">45 000 р.
+                            </div>
+                            <div class="s-prices__small">Количество имплантатов ограничено
+                            </div>
+                          </td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div class="s-prices__footer">
+                    <div class="s-prices__icon-wrap">
+                      <svg class="icon icon-exclamation-mark ">
+                        <use xlink:href="img/svg/sprite.svg#exclamation-mark"></use>
+                      </svg>
+                    </div>Система нового поколения достаточно популярная в&nbsp;России и&nbsp;в&nbsp;мире, популярный выбор среди пациентов сети клиник
+                  </div>
+                </div>
+              </div>
+              <div class="s-prices__slide">
+                <div class="s-prices__item">
+                  <div class="s-prices__head">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="s-prices__title"> ANYONE
+                        </div>Южная Корея
+                      </div>
+                      <div class="col-6">
+                        <div class="s-prices__express">
+                          <svg class="icon icon-clock ">
+                            <use xlink:href="img/svg/sprite.svg#clock"></use>
+                          </svg>
+                          <div>Экспресс-имплантация </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s-prices__body">
+                    <table>
+                        <tr>
+                          <td class="text-gray">Класс</td>
+                          <td>Прагматичный</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Гарантия<br/>на&nbsp;имплантацию</td>
+                          <td>10 лет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Скорость <br/>приживления</td>
+                          <td>12-20 недель</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность<br/>экспресс-имплантации<br/> —«Ни дня без зуба!»</td>
+                          <td>Возможна, при&nbsp;определенных условиях</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Эстетика</td>
+                          <td>Широкий выбор ортопедических компонентов, позволяет точно подобрать цвет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность избежать костной пластики</td>
+                          <td>В некоторых клинических случаях есть возможность избежать костной пластики</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена<br/>за&nbsp;хирургический этап</td>
+                          <td> 
+                            <div class="s-prices__strike">20 141 р.
+                            </div>
+                            <div class="fw-500">15 965 р.</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена под ключ<br/>- имплантат с установкой<br/>- формирователь десны<br/>- установка абатмента<br/>- коронка с установкой</td>
+                          <td>  
+                            <div class="s-prices__strike">33 000 р.
+                            </div>
+                            <div class="s-prices__total-price text-primary">45 000 р.
+                            </div>
+                            <div class="s-prices__small">Количество имплантатов ограничено
+                            </div>
+                          </td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div class="s-prices__footer">
+                    <div class="s-prices__icon-wrap">
+                      <svg class="icon icon-exclamation-mark ">
+                        <use xlink:href="img/svg/sprite.svg#exclamation-mark"></use>
+                      </svg>
+                    </div>Система нового поколения достаточно популярная в&nbsp;России и&nbsp;в&nbsp;мире, популярный выбор среди пациентов сети клиник
+                  </div>
+                </div>
+              </div>
+              <div class="s-prices__slide">
+                <div class="s-prices__item">
+                  <div class="s-prices__head">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="s-prices__title"> ANYONE
+                        </div>Южная Корея
+                      </div>
+                      <div class="col-6">
+                        <div class="s-prices__express">
+                          <svg class="icon icon-clock ">
+                            <use xlink:href="img/svg/sprite.svg#clock"></use>
+                          </svg>
+                          <div>Экспресс-имплантация </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="s-prices__body">
+                    <table>
+                        <tr>
+                          <td class="text-gray">Класс</td>
+                          <td>Прагматичный</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Гарантия<br/>на&nbsp;имплантацию</td>
+                          <td>10 лет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Скорость <br/>приживления</td>
+                          <td>12-20 недель</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность<br/>экспресс-имплантации<br/> —«Ни дня без зуба!»</td>
+                          <td>Возможна, при&nbsp;определенных условиях</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Эстетика</td>
+                          <td>Широкий выбор ортопедических компонентов, позволяет точно подобрать цвет</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Возможность избежать костной пластики</td>
+                          <td>В некоторых клинических случаях есть возможность избежать костной пластики</td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена<br/>за&nbsp;хирургический этап</td>
+                          <td> 
+                            <div class="s-prices__strike">20 141 р.
+                            </div>
+                            <div class="fw-500">15 965 р.</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-gray">Цена под ключ<br/>- имплантат с установкой<br/>- формирователь десны<br/>- установка абатмента<br/>- коронка с установкой</td>
+                          <td>  
+                            <div class="s-prices__strike">33 000 р.
+                            </div>
+                            <div class="s-prices__total-price text-primary">45 000 р.
+                            </div>
+                            <div class="s-prices__small">Количество имплантатов ограничено
+                            </div>
+                          </td>
+                        </tr>
+                    </table>
+                  </div>
+                  <div class="s-prices__footer">
+                    <div class="s-prices__icon-wrap">
+                      <svg class="icon icon-exclamation-mark ">
+                        <use xlink:href="img/svg/sprite.svg#exclamation-mark"></use>
+                      </svg>
+                    </div>Система нового поколения достаточно популярная в&nbsp;России и&nbsp;в&nbsp;мире, популярный выбор среди пациентов сети клиник
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="control-block2 d-lg-none">
+              <div class="pagingInfo2"></div>
+            </div>
+          </div>
+          <div class="s-prices__block lazy-background d-none d-lg-block">
+            <div class="row">
+              <div class="col-6">
+                <div class="s-prices__toggle">Еще 2 системы имплантации
+                  <svg class="icon icon-down-arrow ">
+                    <use xlink:href="img/svg/sprite.svg#down-arrow"></use>
+                  </svg>
+                </div>
+                <ul>
+                  <li>INNO </li>
+                  <li>AnyRidge</li>
+                </ul>
+              </div>
+              <div class="col-6">Будьте внимательны! Некоторые клиники не&nbsp;указывают стоимость имплантации &laquo;под ключ&raquo;, чтобы привлечь низкими ценами. Уточняйте, входят&nbsp;ли в&nbsp;стоимость все работы и&nbsp;материалы</div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- end s-prices-->
       <!-- start s-specialist-->
-      <section class="s-specialist section block-with-lazy" id="s-specialist">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>s-specialist</h2>
+      <section class="s-specialist section-bg block-with-lazy" id="s-specialist">
+        <!-- picture-->
+        <picture class="lazy picture-bg"> 
+          <source srcset="#" data-srcset="img/@2x/webp/s-specialist-bg.webp" type="image/webp" media="(min-width:576px)"/>
+          <source srcset="#" data-srcset="img/@1x/webp/s-specialist-bg.webp" type="image/webp"/>
+          <source srcset="#" data-srcset="img/@2x/s-specialist-bg.jpg" type="image/jpg" media="(min-width:576px)"/>
+          <source srcset="#" data-srcset="img/@1x/s-specialist-bg.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/s-specialist-bg.jpg" alt=""/>
+        </picture>
+        <!-- /picture-->
+        <div class="container section">
+          <div class="section-title">
+            <h2> <span class="text-primary">Доверьте имплантацию</span> 
+              зубов специалисту со&nbsp;стажем работы
+               <span class="section-title__label">
+              Более  
+               <span class="section-title__big">25</span> 
+              лет</span>
+            </h2>
           </div>
-          <div class="row"></div>
+          <div class="s-specialist__man">
+            <picture class="lazy">
+              <source srcset="#" data-srcset="img/@2x/webp/s-specialist-img.webp" type="image/webp" media="(min-width:768px)"/>
+              <source srcset="#" data-srcset="img/@2x/webp/s-specialist-img-sm.webp" type="image/webp"/>
+              <source srcset="#" data-srcset="img/@2x/s-specialist-img.png" type="image/png" media="(min-width:768px)"/>
+              <source srcset="#" data-srcset="img/@2x/s-specialist-img-sm.png" type="image/png"/><img src="img/@2x/s-specialist-img.png" data-src="img/@2x/s-specialist-img.png" alt=""/>
+            </picture>
+            <div class="s-specialist__man-caption d-none d-md-block">
+              <div class="s-specialist__man-caption-name">Кокорин Дмитрий Николаевич
+              </div>
+              <div class="s-specialist__man-caption-prof">Стоматолог-хирург
+              </div>
+            </div>
+          </div>
+          <div class="s-specialist__text-block">
+            <p>Кокорин Дмитрий Николаевич в&nbsp;1994 году закончил Самарский государственный медицинский институт. С&nbsp;1994 по&nbsp;1999 работал врачем в&nbsp;горнизонном госпитале. С&nbsp;1999 Работает в&nbsp;городской стоматологической больнице &#8470;&nbsp;3&nbsp;(отд. &#8470;&nbsp;2&nbsp;хирургии). Импалантцией занимается с&nbsp;2009&nbsp;года. </p>
+            <p>Ежегодно проходит обучение, сертифицируется по&nbsp;данной специальности, посещает конгрессы, симпозиумы, мастер классы, слушает как отечесвенных так и&nbsp;зарубежных лекторов. </p>
+            <p>Доктор , который осуществляет имплантацию, должен находится в&nbsp;зоне доступности, если проблемы возникают в&nbsp;период приживляемости, то&nbsp;врач сразу должен оказать помощь</p>
+          </div>
+          <div class="s-specialist__slider-wrap gal">
+            <div class="s-specialist__slider">
+              <div class="s-specialist__slide"><a class="s-specialist__img-wrap" href="img/@2x/s-specialist-sert-1.jpg" data-fancybox="gallery2"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/s-specialist-sert-1.jpg" alt=""/></a>
+              </div>
+              <div class="s-specialist__slide"><a class="s-specialist__img-wrap" href="img/@2x/s-specialist-sert-2.jpg" data-fancybox="gallery2"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/s-specialist-sert-2.jpg" alt=""/></a>
+              </div>
+              <div class="s-specialist__slide"><a class="s-specialist__img-wrap" href="img/@2x/s-specialist-sert-3.jpg" data-fancybox="gallery2"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/s-specialist-sert-3.jpg" alt=""/></a>
+              </div>
+              <div class="s-specialist__slide"><a class="s-specialist__img-wrap" href="img/@2x/s-specialist-sert-4.jpg" data-fancybox="gallery2"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/s-specialist-sert-4.jpg" alt=""/></a>
+              </div>
+              <div class="s-specialist__slide"><a class="s-specialist__img-wrap" href="img/@2x/s-specialist-sert-5.jpg" data-fancybox="gallery2"><img class="object-fit-js res-i" src="#" data-lazy="img/@2x/s-specialist-sert-5.jpg" alt=""/></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- end s-specialist-->
@@ -613,68 +1059,676 @@
       <section class="s-calc section block-with-lazy" id="s-calc">
         <div class="container">
           <div class="section-title text-center">
-            <h2>s-calc</h2>
+            <h2> <span class="text-primary">Имплантация в&nbsp;&laquo;Зубной Фее&raquo;</span> 
+              &mdash;&nbsp;гарантия здоровой и&nbsp;красивой улыбки
+            </h2>
           </div>
-          <div class="row"></div>
+          <div class="row">
+            <div class="col-xl-6 col-5 d-none d-lg-block">
+                    <div class="s-calc__item row">
+                      <div class="s-calc__img-wrap col-auto">
+                        <!-- picture-->
+                        <picture class="lazy"> 
+                          <source srcset="#" data-srcset="img/@2x/webp/calc-1.webp" type="image/webp"/>
+                          <!-- /webp images  --><img src="#" data-src="img/@2x/calc-1.jpg" alt=""/>
+                        </picture>
+                        <!-- /picture-->
+                      </div>
+                      <div class="col">
+                        <div class="s-calc__title">Большой выбор систем имплантации
+                        </div>
+                        <p>Для вас в&nbsp;клинике представлена широкая линейка имплантационных систем и&nbsp;коронок из&nbsp;металлокерамики, керамики и&nbsp;диоксида циркония в&nbsp;разном ценовом сегменте.</p>
+                      </div>
+                    </div>
+                    <div class="s-calc__item row">
+                      <div class="s-calc__img-wrap col-auto">
+                        <!-- picture-->
+                        <picture class="lazy"> 
+                          <source srcset="#" data-srcset="img/@2x/webp/calc-2.webp" type="image/webp"/>
+                          <!-- /webp images  --><img src="#" data-src="img/@2x/calc-2.jpg" alt=""/>
+                        </picture>
+                        <!-- /picture-->
+                      </div>
+                      <div class="col">
+                        <div class="s-calc__title">Персональный подход к&nbsp;каждому пациенту
+                        </div>
+                        <p>Имплантационная система подбирается индивидуально под ситуацию с&nbsp;учётом пожеланий пациента. Так конструкция будет комфортно ощущаться во&nbsp;рту и&nbsp;прослужит максимально долго</p>
+                      </div>
+                    </div>
+            </div>
+            <div class="col">
+              <div class="s-calc__row row">
+                <div class="col-xl-7 col-sm-auto">
+                  <div class="jaw-block lazy-background">
+                    <!-- picture-->
+                    <picture class="lazy"> 
+                      <source srcset="#" data-srcset="img/@2x/webp/jaw.webp" type="image/webp"/>
+                      <!-- /webp images  --><img src="#" data-src="img/@2x/jaw.png" alt=""/>
+                    </picture>
+                    <!-- /picture-->
+                    <div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="11">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="21">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="12">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="22">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="13">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="23">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="14">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="24">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="15">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="25">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="16">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="26">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="17">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="27">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="18">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="28">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="41">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="31">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="42">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="32">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="43">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="33">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="44">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="34">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="45">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="35">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="46">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="36">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="47">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="37">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="48">
+                      </div>
+                      <div class="jaw-block__tooth-item" data-tooth-number="38">
+                      </div>
+                    </div>
+                    <div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="11">11
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="21">21
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="12">12
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="22">22
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="13">13
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="23">23
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="14">14
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="24">24
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="15">15
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="25">25
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="16">16
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="26">26
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="17">17
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="27">27
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="18">18
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="28">28
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="41">41
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="31">31
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="42">42
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="32">32
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="43">43
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="33">33
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="44">44
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="34">34
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="45">45
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="35">35
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="46">46
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="36">36
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="47">47
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="37">37
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="48">48
+                      </div>
+                      <div class="jaw-block__tooth-number" data-tooth-number="38">38
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col text-center">
+                  <div class="s-calc__logo">
+                    <!-- picture-->
+                    <picture class="lazy"> 
+                      <source srcset="#" data-srcset="img/@2x/webp/logo2.webp" type="image/webp" media="(min-width:576px)"/>
+                      <source srcset="#" data-srcset="img/@1x/webp/logo2.webp" type="image/webp"/>
+                      <source srcset="#" data-srcset="img/@2x/logo2.png" type="image/png" media="(min-width:576px)"/>
+                      <source srcset="#" data-srcset="img/@1x/logo2.png" type="image/png"/><img src="#" data-src="img/@2x/logo2.png" alt=""/>
+                    </picture>
+                    <!-- /picture-->
+                  </div>
+                  <div class="s-calc__sub-title"> <span class="text-primary">Отметье проблемные зубы</span>
+                    и&nbsp;мы&nbsp;рассчитаем стоимость имплантации
+                  </div><a class="s-calc__btn link-modal" data-src="#modal-calс" href="javascript:;" data-order="Узнать стоимость">Узнать стоимость</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!-- end s-calc-->
-      <!-- start s-faq-->
-      <section class="s-faq section block-with-lazy" id="s-faq">
+      <!-- start s-accord-->
+      <section class="s-accord section bg-pattern tracked" id="s-accord">
         <div class="container">
           <div class="section-title text-center">
-            <h2>s-faq</h2>
+            <h2><span class="text-primary">Ответы на&nbsp;часто задаваемые</span> 
+              вопросы перед имплантацией зубов
+            </h2>
+            <div class="section-title__text">Отвечает Дмитрий Николаевич Кокорин
+            </div>
           </div>
-          <div class="row"></div>
+          <div class="row">
+            <div class="col-lg-6">
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет? Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет? Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+                  <div class="s-accord__item hover-block">
+                    <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
+                      <div class="s-accord__icon-wrap">
+                        <svg class="icon icon-chevron-left ">
+                          <use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="showhide-all">
+                      <p> Если человек думает, что этиология неисправности в повреждении подводящей трубки, он должен проверить эту гипотезу. Для этого следует отсоединить шланг, определить его в любую ёмкость (например, в ведро) и включить воду </p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="text-center"><a class="s-accord__btn-more" href="#">Посмотреть все вопросы
+            <svg class="icon icon-spinner ">
+              <use xlink:href="img/svg/sprite.svg#spinner"></use>
+            </svg></a>
+          </div>
+          <div class="s-accord__foot">
+            <div class="row">
+              <div class="col-lg-auto text-lg-left text-center">
+                <div class="s-accord__title-foot">У&nbsp;вас другой вопрос?
+                </div>
+                <div class="s-accord__gray">Задайте его Дмитрию Николаевичу
+                </div>
+              </div>
+              <div class="col text-md-left text-center">
+                <div class="row">
+                  <div class="col-md-auto">
+                    <div class="s-accord__person">
+                      <!-- picture-->
+                      <picture class="lazy"> 
+                        <source srcset="#" data-srcset="img/@2x/webp/s-specialist-img-sm.webp" type="image/webp"/>
+                        <!-- /webp images  --><img src="#" data-src="img/@2x/s-specialist-img-sm.png" alt=""/>
+                      </picture>
+                      <!-- /picture-->
+                    </div>
+                  </div>
+                  <div class="col"> 
+                    <div class="h6 fw-500 em">Кокорин Дмитрий Николаевич</div>
+                    <div class="fw-500"> Врач-стоматолог, хирург</div>
+                  </div>
+                </div>
+              </div>
+              <div class="s-accord__btn-wrap col-md-auto lazy-background"><a class="s-accord__btn btn-js link-modal" data-src="#modal-call" href="javascript:;" data-order="Задать вопрос">Задать вопрос</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- end s-faq-->
-      <!-- start s-q-->
-      <section class="s-q section block-with-lazy" id="s-q">
-        <div class="container">
-          <div class="section-title text-center">
-            <h2>s-q</h2>
-          </div>
-          <div class="row"></div>
-        </div>
-      </section>
-      <!-- end s-q-->
+      <!-- end s-accord-->
       <footer class="footer block-with-lazy">
         <div class="container">
-          <h2>footer</h2>
+          <div class="row">
+            <div class="col-sm">
+              <div class="footer__sm-title text-sm-left text-center">Следите за новостями:
+              </div>
+              <div class="soc"><a class="soc__item" href="#" target="_blank"> <span class="soc__icon-wrap soc__icon-wrap--vk">
+                <svg class="icon icon-vk ">
+                  <use xlink:href="img/svg/sprite.svg#vk"></use>
+                </svg></span>ВКонтакте</a><a class="soc__item" href="#" target="_blank"> <span class="soc__icon-wrap soc__icon-wrap--insta">
+                <svg class="icon icon-insta ">
+                  <use xlink:href="img/svg/sprite.svg#insta"></use>
+                </svg></span>Instagram</a>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="row">
+                <div class="col-sm-12 col-6">
+                  <div class="footer__text footer__text--tel">
+                    <div class="footer__icon-wrap">
+                      <svg class="icon icon-telephone ">
+                        <use xlink:href="img/svg/sprite.svg#telephone"></use>
+                      </svg>
+                    </div><a class="link" href="tel:8351940-78-78">8 3519 40-78-78</a><br/><a class="link" href="tel:8951791-22-55">8 951 791-22-55</a><br/><a class="footer__sm-link link-modal" data-src="#modal-call" href="javascript:;" data-order="Перезвонить в подвале">Перезвоните мне </a>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-6">
+                  <div class="footer__text"> <strong> Магнитогорск   Жукова,&nbsp;18   </strong> 
+                    <div class="d-md-inline">Пн&nbsp;&mdash; Пт: </div> 
+                    с&nbsp;9.00 до&nbsp;20.00<br/>Сб: с&nbsp;9.00 до&nbsp;14.00
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-auto order-lg-first text-sm-left text-center">
+              <div class="footer__logo">
+                <!-- picture-->
+                <picture class="lazy"> 
+                  <source srcset="#" data-srcset="img/@2x/webp/logo.webp" type="image/webp"/>
+                  <!-- /webp images  --><img src="#" data-src="img/@2x/logo.png" alt=""/>
+                </picture>
+                <!-- /picture-->
+              </div>
+              <div class="footer__caption">Безболезненная  имплантация зубов  в&nbsp;Магнитогорске
+              </div>
+            </div>
+            <div class="col-lg-auto col-12 order-sm-first order-last text-left">
+              <ul>
+                <li><a class="footer__link" href="#">Лицензия № ЛО-74-01-003012</a>
+                </li>
+                <li><a class="footer__link" href="#">Перечень платных медицинских услуг</a>
+                </li>
+                <li><a class="footer__link" href="#">Порядок и условия предоставления мед помощи</a>
+                </li>
+                <li><a class="footer__link" href="#">Сведения о мед. работниках</a>
+                </li>
+                <li><a class="footer__link" href="#">Адреса и телефоны органов исполнит. власти РФ</a>
+                </li>
+                <li><a class="footer__link" href="#">Положение об оказании платных медицинских услуг</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <!-- picture-->
-        <picture class="lazy"> 
-          <source srcset="#" data-srcset="img/@2x/webp/s-specialist-img.webp" type="image/webp" media="(min-width:576px)"/>
-          <source srcset="#" data-srcset="img/@1x/webp/s-specialist-img.webp" type="image/webp"/>
-          <source srcset="#" data-srcset="img/@2x/s-specialist-img." type="image/" media="(min-width:576px)"/>
-          <source srcset="#" data-srcset="img/@1x/s-specialist-img." type="image/"/><img src="#" data-src="img/@2x/s-specialist-img." alt=""/>
-        </picture>
-        <!-- /picture-->
+        <div class="footer__bottom text-xl-left text-center">
+          <div class="container">
+            <div class="row">
+              <div class="footer__col col-xl-5 order-xl-last">
+                <div class="row justify-content-xl-start justify-content-center">
+                  <div class="col-auto"><a class="footer__link-body" href="#">Пользовательское соглашение</a>
+                  </div>
+                  <div class="col-auto"><a class="footer__link-body" href="#">Политика конфиденциальности</a>
+                  </div>
+                </div>
+              </div>
+              <div class="footer__col col-xl-7"> 
+                <div class="footer__company">ООО &laquo;Эледент&raquo;&nbsp;/ ИНН 7455001836&nbsp;/ КПП 745501001&nbsp;/ ОГРН 1107455001851
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="footer__col col-xl-7">455034, РФ, Челябинская область, г. Магнитогорск, ул. Жукова, 18. (неж. пом. &#8470;&nbsp;1)
+              </div>
+              <div class="footer__col col-xl-5">
+                <div class="footer__develop"> 
+                  <div class="d-block d-xl-inline">Создание и продвижение сайта:  </div> <a href="#">веб-студия «Барс»</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-    <div class="form-wrap zoom-anim-dialog mfp-hide modal-win modal-form" id="modal-call">
+    <div class="form-wrap modal-win modal-form" id="modal-call">
       <form>
-        <div class="text-center">
-          <div class="form-wrap__title h3 ttu">Обратный звонок
+        <input class="utm_source" type="hidden" name="utm_source"/>
+        <input class="utm_term" type="hidden" name="utm_term"/>
+        <div class="row no-gutters">
+          <div class="col-6 section-bg d-none d-lg-block" data-bg="img/@2x/modal-1.jpg"></div>
+          <div class="col">
+            <div class="form-wrap__top-title">Укажите контактные данные и&nbsp;удобное время для звонка
+            </div>
+            <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
+            </div>
+            <div class="form-wrap__text form-wrap__text--sm">Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
+            </div>
+            <input class="order" type="hidden" name="order" value=""/>
+            <div class="form-wrap__input-wrap">
+              <label><span class="form-wrap__title">Введите Ваш номер телефона для связи</span><input class="form-wrap__input" type="tel" placeholder="Ваш номер телефона" name="tel" required="required"/>
+              </label>
+            </div>
+            <!-- +e.input-wrap-->
+            <div class="form-wrap__title"> Выберите время для звонка
+            </div>
+            <label class="custom-input-time"><input class="custom-input-time__input" type="checkbox" name="scr8-time"/><span class="custom-input-time__lab"></span><span class="custom-input-time__text custom-input-time__text--now"> <span class="d-none d-sm-inline">Позвонить сейчас</span><span class="d-sm-none">Сейчас</span></span><span class="custom-input-time__text custom-input-time__text--time"> <span class="d-none d-sm-inline">Позвонить по времени</span><span class="d-sm-none">По времени</span></span>
+            </label>
+            <div class="toggle-wrap-input-js">
+              <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="text" placeholder="Например, 10 апреля в 14:00" name="time"/>
+              </div>
+              <!-- +e.input-wrap-->
+            </div>
+            <button class="form-wrap__btn" type="submit">Перезвоните мне 
+            </button>
+            <div class="form-wrap__polite">
+              <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text">
+                Принимаю  <a href="#" target="_blank">условия обработки </a> 
+                персональных данных</span>
+              </label>
+            </div>
           </div>
-          <p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
-        </div>
-        <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="Ваше Имя" placeholder="text" name="Ваше Имя" required="required"/>
-        </div>
-        <!-- +e.input-wrap-->
-        <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="Ваш телефон" placeholder="tel" name="Ваш телефон" required="required"/>
-        </div>
-        <!-- +e.input-wrap--><input class="form-wrap__btn btn btn-block btn-warning mb-4" type="submit" value="Рассчитать"/>
-        <div class="form-wrap__polite">
-          <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text">
-            Принимаю  <a href="#" target="_blank">условия обработки </a> 
-            персональных данных</span>
-          </label>
         </div>
       </form>
     </div>
     <!-- #modal-call-->
+    <div class="form-wrap modal-win modal-form" id="modal-calс">
+      <form>
+        <input class="utm_source" type="hidden" name="utm_source"/>
+        <input class="utm_term" type="hidden" name="utm_term"/>
+        <div class="row no-gutters">
+          <div class="jaw-block-wrap col-6 d-none d-lg-block">
+            <div class="form-wrap__top-title text-center">Отметьте <br/>проблемные зубы
+            </div>
+            <div class="jaw-block lazy-background">
+              <!-- picture-->
+              <picture class="lazy"> 
+                <source srcset="#" data-srcset="img/@2x/webp/jaw.webp" type="image/webp"/>
+                <!-- /webp images  --><img src="#" data-src="img/@2x/jaw.png" alt=""/>
+              </picture>
+              <!-- /picture-->
+              <div>
+                <div class="jaw-block__tooth-item" data-tooth-number="11">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="21">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="12">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="22">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="13">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="23">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="14">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="24">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="15">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="25">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="16">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="26">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="17">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="27">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="18">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="28">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="41">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="31">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="42">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="32">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="43">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="33">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="44">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="34">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="45">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="35">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="46">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="36">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="47">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="37">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="48">
+                </div>
+                <div class="jaw-block__tooth-item" data-tooth-number="38">
+                </div>
+              </div>
+              <div>
+                <div class="jaw-block__tooth-number" data-tooth-number="11">11
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="21">21
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="12">12
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="22">22
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="13">13
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="23">23
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="14">14
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="24">24
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="15">15
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="25">25
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="16">16
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="26">26
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="17">17
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="27">27
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="18">18
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="28">28
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="41">41
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="31">31
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="42">42
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="32">32
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="43">43
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="33">33
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="44">44
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="34">34
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="45">45
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="35">35
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="46">46
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="36">36
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="47">47
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="37">37
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="48">48
+                </div>
+                <div class="jaw-block__tooth-number" data-tooth-number="38">38
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-wrap__top-title">Укажите контактные данные и&nbsp;удобное время для звонка
+            </div>
+            <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
+            </div>
+            <div class="form-wrap__text form-wrap__text--sm">Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
+            </div>
+            <input class="order" type="hidden" name="order" value=""/>
+            <div class="form-wrap__input-wrap">
+              <label><span class="form-wrap__title">Введите Ваш номер телефона для связи</span><input class="form-wrap__input" type="tel" placeholder="Ваш номер телефона" name="tel" required="required"/>
+              </label>
+            </div>
+            <!-- +e.input-wrap-->
+            <div class="form-wrap__title"> Выберите время для звонка
+            </div>
+            <label class="custom-input-time"><input class="custom-input-time__input" type="checkbox" name="scr8-time"/><span class="custom-input-time__lab"></span><span class="custom-input-time__text custom-input-time__text--now"> <span class="d-none d-sm-inline">Позвонить сейчас</span><span class="d-sm-none">Сейчас</span></span><span class="custom-input-time__text custom-input-time__text--time"> <span class="d-none d-sm-inline">Позвонить по времени</span><span class="d-sm-none">По времени</span></span>
+            </label>
+            <div class="toggle-wrap-input-js">
+              <div class="form-wrap__input-wrap"><input class="form-wrap__input" type="text" placeholder="Например, 10 апреля в 14:00" name="time"/>
+              </div>
+              <!-- +e.input-wrap-->
+            </div>
+            <button class="form-wrap__btn" type="submit">Перезвоните мне 
+            </button>
+            <div class="form-wrap__polite">
+              <label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text">
+                Принимаю  <a href="#" target="_blank">условия обработки </a> 
+                персональных данных</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- #modal-calc-->
     <!-- modal-->
     <script src="js/lazy.js"></script>
     <script src="js/jquery.min.js"></script>
@@ -692,7 +1746,7 @@
     <script src="libs/svg4everybody-master/svg4everybody.min.js"></script>
     <!-- /for svg libs-->
     <script src="libs/jquery.inputmask.bundle.min.js"></script>
-    <script src="libs/jquery.morelines.min.js"></script>
+    <script src="libs/Readmore.js/readmore.min.js"></script>
     <script src="js/common.js"></script><svg class="invisible">
 <linearGradient id="insta-gradient"  x1="0%" y1="0%"    x2="0%" y2="100%">
 <stop offset="0%"   stop-color="#c1fffb"/>

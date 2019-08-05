@@ -1,43 +1,324 @@
 .footer {
-		
+  font-size: rem(14);
+  border: 1px solid rgba($color: #b4b4b4, $alpha: .21);
+  padding-top: rem(30);
+
+  &__logo {
+    margin-bottom: rem(6);
+    display: inline-block;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: rem(0);
+    }
+
+    margin-top: rem(30);
+  }
+
+  &__caption {
+    @include media-breakpoint-up(xl) {
+
+      max-width: rem(248);
+    }
+
+    @include media-breakpoint-up(sm) {
+
+      max-width: rem(148);
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    margin-bottom: rem(20);
+    max-width: rem(232);
+    margin-left: auto;
+    margin-right: auto;
+
+    // max-width: rem(170); 
+    line-height: 1.47;
+    font-size: 1rem;
+    padding-top: rem(6);
+  }
+
+  ul {
+    font-size: 1rem;
+    padding-top: rem(10);
+  }
+
+  li {
+    list-style-type: none;
+
+    a {
+      @extend .tdu;
+      display: inline;
+      border-bottom: 1px solid #cecece;
+      // line-height: 1.5;
+      padding-bottom: rem(2);
+
+      &:hover {
+        border-color: transparent;
+      }
+    }
+
+    font-size: 1rem;
+    margin-bottom: rem(9);
+  }
+
+  &__sm-title {
+    color: $secondary;
+    font-weight: 500;
+    font-size: 1rem;
+    padding-top: rem(10);
+    padding-bottom: rem(20);
+  }
+
+  &__icon-wrap {
+
+    position: absolute;
+
+    @include media-breakpoint-up(sm) {
+
+      left: rem(-10);
+      display: flex;
+    }
+
+    display: none;
+    left: rem(-30);
+    // @include bg('tel.png');
+    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: rem(28px);
+    height: rem(28px);
+    top: rem(-6);
+    box-shadow: inset 0 0 $h6-font-size 1px rgba(255, 255, 255, 0.32);
+    background-color: #585858;
+    background-image: linear-gradient(to top, $primary 0%, #c1fffb 100%);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      font-size: rem(14);
+      color: #ffffff;
+      // filter: drop-shadow( 0 3px 2px rgba(0, 0, 0, 1));
+      // box-shadow: 0 2px 0 #000;
+    }
+  }
+
+  &__text {
+    @include media-breakpoint-up(sm) {
+
+      padding-left: rem(30);
+      margin-right: rem(-15);
+    }
+
+    position: relative;
+    margin-bottom: rem(30);
+
+    strong {
+
+      font-size: 1rem;
+      display: block;
+      margin-bottom: rem(10);
+    }
+
+    .link {
+      @extend .h6;
+      font-weight: 500;
+      color: $body-color !important;
+      text-decoration: none !important;
+    }
+
+    &--tel {
+      margin-top: rem(10);
+    }
+  }
+
+  &__sm-link {
+    @extend .links;
+    border-bottom: 1px solid;
+    font-weight: 500;
+    display: inline-block;
+    font-size: 1rem;
+    text-decoration: none !important;
+  }
+
+  &__link {
+    text-decoration: none !important;
+    font-weight: 500;
+    @extend .text-body;
+
+    // @extend .h6; 
+
+  }
+
+  &__bottom {
+    background-color: #f6f6f6;
+    padding: rem(32) 0;
+    margin-top: rem(20);
+    line-height: 2.07;
+
+    .row {
+      // align-items: center;
+    }
+  }
+
+  &__link-body {
+    color: $body-color;
+    border-bottom: 1px solid #dadada;
+    display: inline-block;
+    margin-bottom: rem(5);
+
+    // border-bottom: 1px solid #000;
+    &:hover {
+      text-decoration: none !important;
+      border-color: transparent;
+    }
+  }
+
+  &__company {
+    margin-bottom: rem(5);
+  }
+
+  &__develop {
+    font-weight: 500;
+  }
+
+  // 
+  @include media-breakpoint-up(xl) {
+    margin-top: rem(25);
+  }
+
+  @include media-breakpoint-up(lg) {}
+
+  @include media-breakpoint-up(md) {}
+
+  @include media-breakpoint-up(sm) {}
+
+  @include media-breakpoint-up(xs) {}
 
 
-// 
-@include media-breakpoint-up(xl) {}
-
-@include media-breakpoint-up(lg) {}
-
-@include media-breakpoint-up(md) {}
-
-@include media-breakpoint-up(sm) {}
-
-@include media-breakpoint-up(xs) {}
+  // 
+  @include media-breakpoint-between(md, xl) {}
 
 
-// 
-@include media-breakpoint-between(md, xl) {}
+  // 
+  @include media-breakpoint-only(xs) {}
+
+  @include media-breakpoint-only(sm) {}
+
+  @include media-breakpoint-only(md) {}
+
+  @include media-breakpoint-only(lg) {}
+
+  @include media-breakpoint-only(xl) {}
 
 
-// 
-@include media-breakpoint-only(xs) {}
+  // 
+  @include media-breakpoint-down(xl) {}
 
-@include media-breakpoint-only(sm) {}
+  @include media-breakpoint-down(lg) {}
 
-@include media-breakpoint-only(md) {}
+  @include media-breakpoint-down(md) {
+    &__col{
+      padding-bottom: rem(10);
+    }
+  }
 
-@include media-breakpoint-only(lg) {}
+  @include media-breakpoint-down(sm) {}
 
-@include media-breakpoint-only(xl) {}
+  @include media-breakpoint-down(xs) {}
+}
 
 
-// 
-@include media-breakpoint-down(xl) {}
+.soc {
+  @include media-breakpoint-down(xs) {
+    display: flex;
+    justify-content: space-around;
 
-@include media-breakpoint-down(lg) {}
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: rem(20);
+  }
 
-@include media-breakpoint-down(md) {}
+  &__item {
+    @include media-breakpoint-down(xs) {
+      width: 50%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
 
-@include media-breakpoint-down(sm) {}
+    display: flex;
+    align-items: center;
+    color: $body-color !important;
+    font-size: 1rem;
+    margin-bottom: rem(15);
+    text-decoration: none !important;
+    // font-family: serif;
+    font-family: Arial,
+    Helvetica,
+    sans-serif;
+  }
 
-@include media-breakpoint-down(xs) {}
+
+  &__icon-wrap {
+    width: rem(37px);
+    height: rem(37px);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: rem(18);
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      @include a-cent;
+      z-index: -1;
+      @include mt;
+    }
+
+    .icon {
+      font-size: rem(18);
+      color: #ffffff;
+    }
+
+    &--vk {
+      background-image: linear-gradient(to top, darken(#20afe7, 10%) 0%, #b4e6ff 100%);
+
+      &::before {
+        background-color: #4d76a1;
+
+        background-image: linear-gradient(to top, #20afe7 0%, #b4e6ff 100%);
+      }
+
+      .icon {
+        font-size: rem(11);
+      }
+    }
+
+    &--insta {
+      background-image: linear-gradient(to top, darken(#ff415e, 10%) 0%, #ff8fa4 100%);
+
+      &::before {
+        background-color: #ffffff;
+
+        background-image: linear-gradient(to top, #ff415e 0%, #ff8fa4 100%);
+      }
+    }
+  }
+
+  &__item:hover .soc__icon-wrap::before {
+    // top: 0;
+    opacity: 0;
+  }
+
 }

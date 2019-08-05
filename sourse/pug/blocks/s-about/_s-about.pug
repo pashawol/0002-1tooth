@@ -41,8 +41,7 @@ mixin s-about()
 				+e.slider
 					- for (var x = 1; x < 4; x++)
 						+e.slide
-							+e.img-wrap(href=`img/@2x/sert-1.jpg`)
-								picture.source( srcset=`img/@2x/webp/sert-${x}.webp`  type="image/webp")
-								img.res-i(src="#" data-lazy=`img/@2x/sert-${x}.jpg` , alt="")
+							+e.img-wrap(href=`img/@2x/sert-${x}.jpg` data-fancybox="gallery")
+								img.object-fit-js.res-i(src="#" data-lazy=`img/@2x/sert-${x}.jpg` , alt="")
 			 
 	// end s-about
