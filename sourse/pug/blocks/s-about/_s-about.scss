@@ -198,7 +198,10 @@
 		left: 0;
 		width: rem(248px);
 		height: rem(208px);
-		@include bg("about-before.png");
+		&.visible{
+
+			@include bg("about-before.png");
+		}
 		// top: 0;
 		text-align: center;
 		@include rfs(rem(21));

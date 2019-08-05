@@ -214,7 +214,8 @@ $slickElement2.slick({
 		var th = $(this);
 		th.find(".jaw-block__tooth-item").click(function(e){
 			$(this).toggleClass("active")
-			th.find(".jaw-block__tooth-number").eq($(this).index()).toggleClass("active")
+			th.find(".jaw-block__tooth-number").eq($(this).index()).toggleClass("active");
+			
 		})
 		
 		th.find(".jaw-block__tooth-number").click(function(e){
