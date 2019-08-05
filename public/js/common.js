@@ -215,7 +215,7 @@ $slickElement2.slick({
 		th.find(".jaw-block__tooth-item").click(function(e){
 			$(this).toggleClass("active")
 			th.find(".jaw-block__tooth-number").eq($(this).index()).toggleClass("active");
-			
+
 		})
 		
 		th.find(".jaw-block__tooth-number").click(function(e){
@@ -266,6 +266,13 @@ $slickElement2.slick({
 			return false;
 		});
 		// /form
+
+		$(".s-accord__btn-more").click(function(e){
+			e.preventDefault();
+			$(".s-accord .col-lg-6").slideDown(function(){
+				$(".s-accord__btn-more").fadeOut();
+			});
+		})
 });
 JSCCommon = { 
 	magnificPopupCall: function () {

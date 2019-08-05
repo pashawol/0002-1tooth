@@ -10,6 +10,12 @@
 		padding-top: rem(20);
 	}
 }
+.col-lg-6{
+	&:nth-child(n + 9){
+		display: none;
+	}
+
+}
 	&__item{
 		border-radius: 5px;
 		border: 2px solid #ededed;
