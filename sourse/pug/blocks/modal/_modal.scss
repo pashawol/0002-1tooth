@@ -4,6 +4,11 @@
 }
 .jaw-block-wrap{
 	padding-top: rem(30);
+	padding-bottom: rem(30);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .modal-win {
 	// display: block;
@@ -149,3 +154,23 @@ a {
 @include media-breakpoint-down(sm) {}
 
 @include media-breakpoint-down(xs) {}
+
+
+.time-block{
+	display: flex;
+	align-items: center;
+	color: #4e4e4e;
+	padding-bottom: rem(40);
+	&__line{
+		display: flex;
+		justify-content: space-between;
+		div:first-child{
+			margin-right: rem(22);
+		}
+	}
+	.icon{
+		color: #cfeef4;
+		font-size: rem(40);
+		margin-right: rem(16);
+	}
+}

@@ -4,6 +4,11 @@
   top: 0;
   left: 0;
   z-index: 2;  
+  .picture-bg{
+    img{
+      object-position: center left;
+    }
+  }
   
   // @include bg("head-bg.jpg");
   // 

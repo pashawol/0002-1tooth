@@ -6,10 +6,21 @@ mixin modal()
 		.row.no-gutters
 			.col-6.section-bg.d-none.d-lg-block(data-bg="img/@2x/modal-1.jpg")
 			.col
-				+e.top-title Укажите контактные данные и&nbsp;удобное время для звонка
-				+e.text.h6 Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
-				+e.text--sm Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
-				
+				+e.top-title Укажите контактные данные 
+					+e.text--lg и&nbsp;удобное время для звонка
+				//- +e.text.h6 Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
+				+e.text--sm Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время. Мы&nbsp;работаем:
+				+b.time-block
+					+icon("clock2")
+					div
+						+e.line
+							div По будням 
+							div с 9:00 до 20:00
+						
+						+e.line
+							div В сб
+							div с 9:00 до 14:00
+					
 				input(type="hidden" class='order' name='order' value="")
 				+form-body()
 				+e.btn(type='submit') Перезвоните мне 
@@ -19,17 +30,18 @@ mixin modal()
 	+form-wrap()(id="modal-calс" class="  modal-win modal-form" )
 		.row.no-gutters
 
-			.jaw-block-wrap.col-6.d-none.d-lg-block
-				+e.top-title.text-center Отметьте 
+			.jaw-block-wrap.col-6.d-none.d-lg-flex
+				+e.jaw-block-title.text-center Отметьте 
 					br
 					| проблемные зубы
 				+jaw()
 			.col
-				+e.top-title Укажите контактные данные и&nbsp;удобное время для звонка
-				+e.text.h6 Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
-				+e.text--sm Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
+				+e.top-title Рассчитать стоимость имплантации
+			 
+				+e.text--sm Администратор Ольга позвонит вам и&nbsp;озвучит стоимость имплантации в&nbsp;трех ценовых сегментах
 				
 				input(type="hidden" class='order' name='order' value="")
+				input(type="hidden" class='tooth-numbers-input' name='tooth-numbers-input' value="")
 				+form-body()
 				+e.btn(type='submit') Перезвоните мне 
 				+polite

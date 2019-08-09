@@ -1,5 +1,10 @@
 .s-rew {
-	padding-top: rem(55);
+	@include media-breakpoint-up(sm){
+
+		padding-top: rem(55);
+		padding-bottom: 2.5rem;
+	}
+	padding-bottom: 1.2rem;
 	.section-title{
 		padding-bottom: em(10);
 	}

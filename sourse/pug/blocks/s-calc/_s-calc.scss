@@ -23,7 +23,10 @@
 		.text-center{
 			align-self: center;
 			@extend .h6;
-			padding-bottom: rem(40);
+			@include media-breakpoint-up(sm) {
+
+				padding-bottom: rem(40);
+			}
 		}
 	}
 	&__logo{

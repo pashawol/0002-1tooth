@@ -22,7 +22,7 @@ h1, .h1 {
   }
   @include media-breakpoint-down(xs) {
 
-    @include font-size(rem(50)); 
+    @include font-size(rem(46)); 
   }
 }
 h2, .h2 { 
@@ -32,7 +32,7 @@ h2, .h2 {
   }
   
   @include media-breakpoint-down(xs) {
-    @include font-size(rem(50)); 
+    @include font-size(rem(46)); 
   }
  }
 h3, .h3 { @include font-size($h3-font-size); }

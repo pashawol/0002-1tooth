@@ -1,5 +1,7 @@
 .s-specialist {
 	background-color: #f8f9f8;
+	position: relative;
+	z-index: 2;
 	.section-title{
 		// position: relative;
 		// z-index: 4;
@@ -43,7 +45,7 @@
 			z-index: 4;
 		}
 	
-			span{
+			.section-title__big{
 				display: block;
 				font-size: rem(79px);
 				font-weight: 500;
@@ -119,7 +121,7 @@
 		}
 	}
 	&__man{
-
+		z-index: -1;
 		picture{
 			margin-left: auto;
 			margin-right: auto;
@@ -282,7 +284,7 @@
 		overflow: hidden;
 		@include media-breakpoint-up(lg) {
 
-			box-shadow: 0 2px 25px 7px rgba(48, 48, 48, 0.05);
+			// box-shadow: 0 2px 25px 7px rgba(48, 48, 48, 0.05);
 		}
 		border: 3px solid #ebebeb;
 		border-radius: rem(12);

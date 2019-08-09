@@ -11,8 +11,6 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png">
     <!-- Custom Browsers Color-->
     <meta name="theme-color" content="#00c6b9">
-    <link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="libs/slick/slick.css">
     <link rel="stylesheet" href="css/main.min.css">
   </head>
   <body>
@@ -20,9 +18,11 @@
       <!-- start HEADER.header-->
       <header class="header block-with-lazy">
         <!-- picture-->
-        <picture class="lazy picture-bg d-none d-lg-block"> 
-          <source srcset="#" data-srcset="img/@2x/webp/head-bg.webp" type="image/webp"/>
-          <!-- /webp images  --><img class="object-fit-js" src="#" data-src="img/@2x/head-bg.jpg" alt=""/>
+        <picture class="lazy picture-bg "> 
+          <source srcset="#" data-srcset="img/@2x/webp/head-bg.webp" type="image/webp" media="(min-width:576px)"/>
+          <source srcset="#" data-srcset="img/@1x/webp/head-bg.webp" type="image/webp"/>
+          <source srcset="#" data-srcset="img/@2x/head-bg.jpg" type="image/jpg" media="(min-width:576px)"/>
+          <source srcset="#" data-srcset="img/@1x/head-bg.jpg" type="image/jpg"/><img class="object-fit-js" src="#" data-src="img/@2x/head-bg.jpg" alt=""/>
         </picture>
         <!-- /picture-->
         <!-- start .top-line-->
@@ -34,10 +34,8 @@
                   <div class="top-line__logo col-sm-auto">
                     <!-- picture-->
                     <picture> 
-                      <source srcset="img/@2x/webp/logo.webp" type="image/webp" media="(min-width:576px)"/>
-                      <source srcset="img/@1x/webp/logo.webp" type="image/webp"/>
-                      <source srcset="img/@2x/logo.png" type="image/png" media="(min-width:576px)"/>
-                      <source srcset="img/@1x/logo.png" type="image/png"/><img src="img/@2x/logo.png" alt=""/>
+                      <source srcset="img/@2x/webp/logo.webp" type="image/webp"/>
+                      <!-- /webp images  --><img src="img/@2x/logo.png" alt=""/>
                     </picture>
                     <!-- /picture-->
                   </div>
@@ -103,7 +101,7 @@
               </ul>
               <div class="header-block__foot">
                 <div class="row">
-                  <div class="col-sm-auto"><a class="header-block__btn link-modal" data-src="#modal-call" href="javascript:;" data-order="Расчитать стоимость в шапке">  Рассчитать стоимость<span>имплантации</span></a>
+                  <div class="col-sm-auto"><a class="header-block__btn link-modal" data-src="#modal-calс" href="javascript:;" data-order="Расчитать стоимость в шапке">  Рассчитать стоимость<span>имплантации</span></a>
                   </div>
                   <div class="col-sm-auto"><a class="header-block__stock-block scroll-link" href="#s-stock">
                     <div class="header-block__stock-block-title">Акция!
@@ -564,7 +562,9 @@
                   <div class="toggle-text-js">
                     <p>Доктор проводит антисептическую&nbsp;обработку полости рта.</p>
                     <p>
-                      Проводит <strong> безболезненную установку имплантата под местной анестезией, накладывает швы</strong></p>
+                      Проводит <strong> безболезненную установку </strong> 
+                       имплантата под местной анестезией, накладывает швы
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1013,8 +1013,7 @@
           <div class="section-title">
             <h2> <span class="text-primary">Доверьте имплантацию</span> 
               зубов специалисту со&nbsp;стажем работы
-               <span class="section-title__label">
-              Более  
+               <span class="section-title__label"> <span class="d-none d-lg-inline">Более </span><span class="d-lg-none">более </span> 
                <span class="section-title__big">25</span> 
               лет</span>
             </h2>
@@ -1272,7 +1271,7 @@
             </div>
           </div>
           <div class="row">
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1286,7 +1285,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1300,7 +1299,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1314,7 +1313,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1328,7 +1327,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1342,7 +1341,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет? Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1356,7 +1355,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет? Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1370,7 +1369,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1384,7 +1383,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1398,7 +1397,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
+              <div class="s-accord__col col-lg-6">
                 <div class="s-accord__item hover-block">
                   <div class="showhide btn-click"><span>Почему я должен верить, что имплант приживется, а если нет?</span>
                     <div class="s-accord__icon-wrap">
@@ -1551,11 +1550,26 @@
         <div class="row no-gutters">
           <div class="col-6 section-bg d-none d-lg-block" data-bg="img/@2x/modal-1.jpg"></div>
           <div class="col">
-            <div class="form-wrap__top-title">Укажите контактные данные и&nbsp;удобное время для звонка
+            <div class="form-wrap__top-title">Укажите контактные данные 
+              <div class="form-wrap__text form-wrap__text--lg">и&nbsp;удобное время для звонка
+              </div>
             </div>
-            <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
+            <div class="form-wrap__text form-wrap__text--sm">Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время. Мы&nbsp;работаем:
             </div>
-            <div class="form-wrap__text form-wrap__text--sm">Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
+            <div class="time-block">
+              <svg class="icon icon-clock2 ">
+                <use xlink:href="img/svg/sprite.svg#clock2"></use>
+              </svg>
+              <div>
+                <div class="time-block__line">
+                  <div>По будням </div>
+                  <div>с 9:00 до 20:00</div>
+                </div>
+                <div class="time-block__line">
+                  <div>В сб</div>
+                  <div>с 9:00 до 14:00</div>
+                </div>
+              </div>
             </div>
             <input class="order" type="hidden" name="order" value=""/>
             <div class="form-wrap__input-wrap">
@@ -1590,8 +1604,8 @@
         <input class="utm_source" type="hidden" name="utm_source"/>
         <input class="utm_term" type="hidden" name="utm_term"/>
         <div class="row no-gutters">
-          <div class="jaw-block-wrap col-6 d-none d-lg-block">
-            <div class="form-wrap__top-title text-center">Отметьте <br/>проблемные зубы
+          <div class="jaw-block-wrap col-6 d-none d-lg-flex">
+            <div class="form-wrap__jaw-block-title text-center">Отметьте <br/>проблемные зубы
             </div>
             <div class="jaw-block lazy-background">
               <!-- picture-->
@@ -1735,13 +1749,12 @@
             </div>
           </div>
           <div class="col">
-            <div class="form-wrap__top-title">Укажите контактные данные и&nbsp;удобное время для звонка
+            <div class="form-wrap__top-title">Рассчитать стоимость имплантации
             </div>
-            <div class="form-wrap__text h6">Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
-            </div>
-            <div class="form-wrap__text form-wrap__text--sm">Мы&nbsp;работаем по&nbsp;будням с&nbsp;9:00 до&nbsp;20:00, в&nbsp;сб: с&nbsp;9:00 до&nbsp;14:00
+            <div class="form-wrap__text form-wrap__text--sm">Администратор Ольга позвонит вам и&nbsp;озвучит стоимость имплантации в&nbsp;трех ценовых сегментах
             </div>
             <input class="order" type="hidden" name="order" value=""/>
+            <input class="tooth-numbers-input" type="hidden" name="tooth-numbers-input" value=""/>
             <div class="form-wrap__input-wrap">
               <label><span class="form-wrap__title">Введите Ваш номер телефона для связи</span><input class="form-wrap__input" type="tel" placeholder="Ваш номер телефона" name="tel" required="required"/>
               </label>

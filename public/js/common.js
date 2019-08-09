@@ -210,18 +210,41 @@ $slickElement2.slick({
 	$('.form-wrap__polite').change(function(){
 		$(this).parents('form').find('.form-wrap__btn').toggleClass('disabled');
 	})
-	$(".jaw-block").each(function(){
+	// $(".jaw-block").each(function(){
 		var th = $(this);
-		th.find(".jaw-block__tooth-item").click(function(e){
-			$(this).toggleClass("active")
-			th.find(".jaw-block__tooth-number").eq($(this).index()).toggleClass("active");
+		$('[data-tooth-number]').click(function(e){
+			var number = $(this).data("tooth-number")
+			if($(this).hasClass("active")) { 
+				$('[data-tooth-number="'+number+'"]').removeClass('active');
+			}else{
+				$('[data-tooth-number="'+number+'"]').addClass('active');
 
-		})
+		}
+
+		var teeth = [];
+	 
 		
-		th.find(".jaw-block__tooth-number").click(function(e){
-			$(this).toggleClass("active")
-			th.find(".jaw-block__tooth-item").eq($(this).index()).toggleClass("active")
-		})
+		$('.jaw-block__tooth-item.active').each(function() {
+				var value = $(this).data("tooth-number");
+
+				if (teeth.indexOf(value) == - 1) {
+						teeth.push(value);
+				}
+		});
+
+		$('.tooth-numbers-input').val(teeth.join(', '));
+
+		
+			// $(this).toggleClass("active")
+			// th.find(".jaw-block__tooth-number")
+			// .eq($(this).index()).toggleClass("active");
+
+		// })
+		
+		// th.find(".jaw-block__tooth-number").click(function(e){
+		// 	$(this).toggleClass("active")
+		// 	th.find(".jaw-block__tooth-item").eq($(this).index()).toggleClass("active")
+		// })
 	})
 
 
@@ -247,11 +270,22 @@ $slickElement2.slick({
 
 		return false;
 }); 
+
+var gets = (function() {
+	var a = window.location.search;
+	var b = new Object();
+	a = a.substring(1).split("&");
+	for (var i = 0; i < a.length; i++) {
+	c = a[i].split("=");
+			b[c[0]] = c[1];
+	}
+	return b;
+})();
 		// form
 		$("form").submit(function () { //Change
 			var th = $(this);
 			th.find('.utm_source').val(gets['utm_source']);
-		th.find('.utm_term').val(gets['utm_term']);
+			th.find('.utm_term').val(gets['utm_term']);
 			$.ajax({
 				type: "POST",
 				url: 'action.php', //Change
@@ -277,7 +311,7 @@ $slickElement2.slick({
 JSCCommon = { 
 	magnificPopupCall: function () {
 		$(".link-modal").click(function(){
-			$($(this).data("src")).find(".order").val("Вид формы: " + $(this).data("order"))
+			$($(this).data("src")).find(".order").val( $(this).data("order"))
 		})
 		$(".link-modal").fancybox({
 			arrows: false,
