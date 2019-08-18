@@ -195,6 +195,9 @@ $slickElement2.slick({
 		$(".s-prices__slide:nth-child(4), .s-prices__slide:nth-child(5)").slideToggle()
 	})
 //  скрывает/ показывает лишний текст
+$(document).on('click',".b-morelines_section_button", function(e){
+	e.preventDefault();
+})
 	$('.toggle-text-js').readmore({ speed: 500,  
 		moreLink: '<a class="b-morelines_section_button" href="#">Читать полностью</a>',
 	lessLink: '<a class="b-morelines_section_button" href="#">Скрыть</a>',
