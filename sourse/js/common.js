@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
 		nextArrow: arrl2,
 		responsive: [{
 
-      breakpoint: 992,
+      breakpoint: 991.98,
       settings: {
 				slidesToShow: 3, 
 				infinite: false,
@@ -58,7 +58,7 @@ jQuery(document).ready(function ($) {
 		responsive: [
 			{
 
-      breakpoint: 992,
+      breakpoint: 991.98,
       settings: {
 				slidesToShow: 5, 
 				infinite: false,
@@ -68,7 +68,7 @@ jQuery(document).ready(function ($) {
 		
 			{
 
-      breakpoint: 576,
+      breakpoint: 575.98,
       settings: {
 				slidesToShow: 3,  
       } 
@@ -90,7 +90,7 @@ jQuery(document).ready(function ($) {
 		nextArrow: arrl2,
 		responsive: [{
 
-      breakpoint: 992,
+      breakpoint: 991,
       settings: {
 				slidesToShow: 3, 
 				infinite: false,
@@ -99,7 +99,7 @@ jQuery(document).ready(function ($) {
 
 		},
 		{
-      breakpoint: 768,
+      breakpoint: 767.98,
       settings: {
 				slidesToShow: 2 
       }
@@ -133,14 +133,14 @@ $slickElement.slick({
 		nextArrow: arrl2,
 		responsive: [{
 
-      breakpoint: 992,
+      breakpoint: 991.98,
       settings: {
 				slidesToShow: 3, 
 				loop: false,
       } 
 		},
 		{
-      breakpoint: 768,
+      breakpoint: 767.98,
       settings: {
 				slidesToShow: 2 
       }
@@ -173,7 +173,7 @@ $slickElement2.slick({
 		nextArrow: arrl2,
 		responsive: [{
 
-      breakpoint: 992,
+      breakpoint: 991.98,
       settings: {
 				slidesToShow: 5, 
 				loop: false,
@@ -181,7 +181,7 @@ $slickElement2.slick({
 
 		},
 		{
-      breakpoint: 768,
+      breakpoint: 767.98,
       settings: {
 				slidesToShow: 2 
       }
