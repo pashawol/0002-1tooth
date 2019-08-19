@@ -196,20 +196,37 @@
 	&__label{
 		position: absolute;
 		left: 0;
-		width: rem(248px);
-		height: rem(208px);
+		@include media-breakpoint-up(xl) {
+
+			width: rem(248px);
+			height: rem(208px);
+		}
+		width: rem(248px * .9);
+		height: rem(208px * .9);
 		&.visible{
 
 			@include bg("about-before.png");
+			background-size: 100%  100%;
+			background-repeat: no-repeat;
 		}
 		// top: 0;
 		text-align: center;
-		@include rfs(rem(21));
+		@include rfs(rem(19));
 		top: rem(110);
-		left: rem(-100);
-		padding-top: rem(50);
-		padding-left: rem(45);
-		padding-right: rem(38);
+		@include media-breakpoint-up(xl){
+			font-size: rem(21);
+
+			left: rem(-100);
+			line-height: 1.5;
+			padding-top: rem(50);
+			padding-left: rem(45);
+			padding-right: rem(38);
+		}
+		line-height: 1.2;
+		left: rem(-60);
+		padding-top: rem(60);
+		padding-left: rem(45 * .8);
+		padding-right: rem(38 * .8);
 	}
 	&__img-wrap{
 		
@@ -256,7 +273,7 @@
 	&__slider-wrap{
 		z-index: 110;
 		@include media-breakpoint-down(md) {
-			// max-width: rem(163 * 2);
+			max-width: rem(163 * 2);
 			margin-left: rem(-10);
 		}
 		@include media-breakpoint-down(xs) {
