@@ -23,7 +23,7 @@ mixin modal()
 					
 				input(type="hidden" class='order' name='order' value="")
 				+form-body()
-				+e.btn(type='submit') Перезвоните мне 
+				+e.btn(type='submit').disabled Перезвоните мне 
 				+polite
 	// #modal-call
  
@@ -43,7 +43,7 @@ mixin modal()
 				input(type="hidden" class='order' name='order' value="")
 				input(type="hidden" class='tooth-numbers-input' name='tooth-numbers-input' value="")
 				+form-body()
-				+e.btn(type='submit') Перезвоните мне 
+				+e.btn(type='submit').disabled Перезвоните мне 
 				+polite
 	// #modal-calc
  
