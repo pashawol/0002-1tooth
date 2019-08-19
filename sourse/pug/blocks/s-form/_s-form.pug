@@ -73,7 +73,7 @@ mixin s-form()
 						input(type="hidden" class='order' name="order" value="Получите персональный план")
 						+input("Иван","text",'Как Вас зовут?',"name")(required)
 						+form-body()
-						+e.btn(type="submit")  Записаться на комплексную 
+						+e.btn(type="submit").disabled  Записаться на комплексную 
 							span консультацию
 						+polite
 	// end s-form
