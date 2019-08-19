@@ -6,12 +6,12 @@ mixin footer()
 					+e.sm-title.text-sm-left.text-center Следите за новостями:
 
 					+b.soc
-						+e.item(href="#" target="_blank") 
+						+e.item(href="https://vk.com/zubnayafeya74" target="_blank") 
 							+e.icon-wrap--vk
 								+icon("vk")
 							| ВКонтакте
 						
-						+e.item(href="#" target="_blank") 
+						+e.item(href="https://www.instagram.com/zubnayafeya74/" target="_blank") 
 							+e.icon-wrap--insta
 								+icon("insta")
 							| Instagram
@@ -43,26 +43,33 @@ mixin footer()
 				.col-lg-auto.col-12.order-sm-first.order-last.text-left
 					ul
 						li
-							+e.link(href="#") Лицензия № ЛО-74-01-003012
+							+e.link(href=`img/@2x/footer-sertificate-1.jpg` data-fancybox="footer-gallery5") Лицензия № ЛО-74-01-003012
+							a.d-none(href=`img/@2x/footer-sertificate-2.jpg` data-fancybox="footer-gallery5")
+							a.d-none(href=`img/@2x/footer-sertificate-3.jpg` data-fancybox="footer-gallery5")
+							a.d-none(href=`img/@2x/footer-sertificate-4.jpg` data-fancybox="footer-gallery5")
 						li
-							+e.link(href="#") Перечень платных медицинских услуг
+							+e.link(href=`img/@2x/footer-uslugi-1.jpg` data-fancybox="footer-uslugi") Порядок и условия предоставления мед помощи
+							a.d-none(href=`img/@2x/footer-uslugi-2.jpg` data-fancybox="footer-uslugi")
+							a.d-none(href=`img/@2x/footer-uslugi-3.jpg` data-fancybox="footer-uslugi")
+							a.d-none(href=`img/@2x/footer-uslugi-4.jpg` data-fancybox="footer-uslugi")
 						li
-							+e.link(href="#") Порядок и условия предоставления мед помощи
+							+e.link(href="#") (-)Перечень платных медицинских услуг
 						li
-							+e.link(href="#") Сведения о мед. работниках
+							+e.link(href=`img/@2x/vrachi-1.jpg` data-fancybox="footer-vrachi") Сведения о мед. работниках
+							a.d-none(href=`img/@2x/vrachi-2.jpg` data-fancybox="footer-vrachi")
 						li
-							+e.link(href="#") Адреса и телефоны органов исполнит. власти РФ
+							+e.link(href="files/organizations.pdf" target="_blank") Адреса и телефоны органов исполнит. власти РФ
 						li
-							+e.link(href="#") Положение об оказании платных медицинских услуг
+							+e.link(href="#") (-)Положение об оказании платных медицинских услуг
 		+e.bottom.text-xl-left.text-center
 			.container
 				.row
 					+e.col.col-xl-5.order-xl-last
 						.row.justify-content-xl-start.justify-content-center
 							.col-auto
-								+e.link-body(href="#") Пользовательское соглашение
+								+e.link-body(href="files/processing-conditions.pdf" target="_blank") Пользовательское соглашение
 							.col-auto
-								+e.link-body(href="#") Политика конфиденциальности
+								+e.link-body(href="files/privacy-policy.pdf" target="_blank") Политика конфиденциальности
 					+e.col.col-xl-7 
 					
 						+e.company ООО &laquo;Эледент&raquo;&nbsp;/ ИНН 7455001836&nbsp;/ КПП 745501001&nbsp;/ ОГРН 1107455001851
@@ -75,4 +82,4 @@ mixin footer()
 						+e.develop 
 							.d-block.d-xl-inline Создание и продвижение сайта:  
 							| 
-							a(href="#") веб-студия «Барс»
+							a(href="https://studiobars.ru" target="_blank") студия «Барс»
