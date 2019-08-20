@@ -2,6 +2,32 @@
 mixin modal()  
 	 
 	
+	+form-wrap()(id="modal-doctor" class="  modal-win modal-form" )
+		.row.no-gutters
+			.col-6.section-bg.d-none.d-lg-block(data-bg="img/@2x/modal-4.jpg")
+			.col
+				+e.top-title Укажите контактные данные 
+					+e.text--lg и&nbsp;удобное время для звонка
+				//- +e.text.h6 Администратор Ольга позвонит вам прямо сейчас или в&nbsp;другое рабочее время:
+				+e.text--sm Дмитрий Николаевич позвонит вам и&nbsp;ответит на&nbsp;ваш вопрос. Мы&nbsp;работаем:
+				+b.time-block
+					+icon("clock2")
+					div
+						+e.line
+							div По будням 
+							div с 9:00 до 20:00
+						
+						+e.line
+							div В сб
+							div с 9:00 до 14:00
+					
+				input(type="hidden" class='order' name='order' value="")
+				+form-body()
+				+e.btn.disabled(type='submit') Задать вопрос 
+				+polite
+	// #modal-doctor
+
+
 	+form-wrap()(id="modal-sale" class="  modal-win modal-form" )
 		.row.no-gutters
 			.col-6.section-bg.d-none.d-lg-block(data-bg="img/@2x/modal-1.jpg")
@@ -23,9 +49,9 @@ mixin modal()
 					
 				input(type="hidden" class='order' name='order' value="")
 				+form-body()
-				+e.btn(type='submit') Записаться по акции 
+				+e.btn.disabled(type='submit') Записаться по акции 
 				+polite
-	// #modal-call
+	// #modal-sale
  
 	
 	+form-wrap()(id="modal-call" class="  modal-win modal-form" )
