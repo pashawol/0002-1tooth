@@ -13,6 +13,8 @@
   }
 
 	&__wrap{
+    @extend .text-body;
+    text-decoration: none !important;
     // @include media-breakpoint-up(sm){
     //   // text-align: left;
     //   padding-left: 0;

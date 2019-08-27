@@ -287,17 +287,18 @@ var gets = (function() {
 		// form
 		$("form").submit(function () { //Change
 			var th = $(this);
-			th.find('.utm_source').val(gets['utm_source']);
+			th.find('.utm_source').val(gets['utm_source']); // добавить здесь в php и в форме
 			th.find('.utm_term').val(gets['utm_term']);
 			$.ajax({
 				type: "POST",
 				url: 'action.php', //Change
 				data: th.serialize()
 			}).success(function () { 
+				ym(55013233,'reachGoal','call-back');
+				//gtag('event','click_po_knopkie',{'event_category':'submit','event_action':'call-back'});
 				window.location.replace("/thanks.html");
 				setTimeout(function () { 
 					th.trigger("reset"); 
-					// ym(53383120, 'reachGoal', 'zakaz');
 				}, 4000);
 			});
 			return false;

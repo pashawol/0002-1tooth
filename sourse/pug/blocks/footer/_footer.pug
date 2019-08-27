@@ -37,7 +37,7 @@ mixin footer()
 								br
 								| Сб: с&nbsp;9.00 до&nbsp;14.00
 				.col-sm-auto.order-lg-first.text-sm-left.text-center
-					+e.logo
+					+e.logo(href="index.html")
 						+pic('logo','png','','lazy',0)
 					+e.caption Безболезненная  имплантация зубов  в&nbsp;Магнитогорске
 				.col-lg-auto.col-12.order-sm-first.order-last.text-left
@@ -48,19 +48,17 @@ mixin footer()
 							a.d-none(href=`img/@2x/footer-sertificate-3.jpg` data-fancybox="footer-gallery5")
 							a.d-none(href=`img/@2x/footer-sertificate-4.jpg` data-fancybox="footer-gallery5")
 						li
-							+e.link(href=`img/@2x/footer-uslugi-1.jpg` data-fancybox="footer-uslugi") Порядок и условия предоставления мед помощи
+							+e.link(href=`img/@2x/footer-uslugi-1.jpg` data-fancybox="footer-uslugi") Положение об оказании платных медицинских услуг
 							a.d-none(href=`img/@2x/footer-uslugi-2.jpg` data-fancybox="footer-uslugi")
 							a.d-none(href=`img/@2x/footer-uslugi-3.jpg` data-fancybox="footer-uslugi")
 							a.d-none(href=`img/@2x/footer-uslugi-4.jpg` data-fancybox="footer-uslugi")
 						li
-							+e.link(href="#") (-)Перечень платных медицинских услуг
+							+e.link(href="files/price.xlsx") Перечень платных медицинских услуг
 						li
 							+e.link(href=`img/@2x/vrachi-1.jpg` data-fancybox="footer-vrachi") Сведения о мед. работниках
 							a.d-none(href=`img/@2x/vrachi-2.jpg` data-fancybox="footer-vrachi")
 						li
 							+e.link(href="files/organizations.pdf" target="_blank") Адреса и телефоны органов исполнит. власти РФ
-						li
-							+e.link(href="#") (-)Положение об оказании платных медицинских услуг
 		+e.bottom.text-xl-left.text-center
 			.container
 				.row
