@@ -10,16 +10,16 @@ $mail->Encoding = 'base64';
 $mail->CharSet = 'utf-8';
 
 ///от кого письмо  
-$mail->setFrom('info@info.com');
+$mail->setFrom('info@implant174.ru');
 
  $mail->addAddress('spike.mgn@gmail.com');
- // $mail->addAddress('horenkova369@gmail.com');
+ $mail->addAddress('zubnayafeya74@yandex.ru');
 // $mail->addAddress('stab@inbox.support');
 
 
 
 //Субъект
-$mail->Subject = 'Заявка с сайта';
+$mail->Subject = 'Заявка с сайта Имплантация implant174.ru';
 
 $time = date('d.m.Y в H:i');
 $html = '
