@@ -295,7 +295,7 @@ var gets = (function() {
 				data: th.serialize()
 			}).success(function () { 
 				ym(55013233,'reachGoal','call-back');
-				//gtag('event','click_po_knopkie',{'event_category':'submit','event_action':'call-back'});
+				gtag('event','click_po_knopkie',{'event_category':'submit','event_action':'call-back'});
 				window.location.replace("/thanks.html");
 				setTimeout(function () { 
 					th.trigger("reset"); 
