@@ -284,11 +284,15 @@ var gets = (function() {
 	}
 	return b;
 })();
+
+
 		// form
 		$("form").submit(function () { //Change
-			var th = $(this);
-			th.find('.utm_source').val(gets['utm_source']); // добавить здесь в php и в форме
-			th.find('.utm_term').val(gets['utm_term']);
+			var th = $(this);// добавить здесь в php и в форме
+			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || '') );
+			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || '') );
+			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || '') );
+			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || '') );
 			$.ajax({
 				type: "POST",
 				url: 'action.php', //Change
