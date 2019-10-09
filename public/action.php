@@ -12,8 +12,9 @@ $mail->CharSet = 'utf-8';
 ///от кого письмо  
 $mail->setFrom('info@implant174.ru');
 
- $mail->addAddress('spike.mgn@gmail.com');
- $mail->addAddress('zubnayafeya74@yandex.ru');
+$mail->addAddress('rocketsstat@yandex.ru');
+// $mail->addAddress('rocketsstat@yandex.ru');
+// $mail->addAddress('zubnayafeya74@yandex.ru');
 // $mail->addAddress('stab@inbox.support');
 
 
@@ -57,6 +58,13 @@ $html = '
     
     if (!empty($_POST['utm_term'])) {
         $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> utm_term:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['utm_term'] . '</b></td>';
+    }    
+    if (!empty($_POST['utm_medium'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> utm_medium:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['utm_medium'] . '</b></td>';
+    }  
+      
+    if (!empty($_POST['utm_campaign'])) {
+        $html .= ' <tr style="background-color: #f8f8f8;"> <td style="padding: 10px; border: #e9e9e9 1px solid;"> utm_campaign:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . $_POST['utm_campaign'] . '</b></td>';
     }
     // if (!empty($_POST['tech'])) {
     //     $html .= ' <tr style="background-color: #f8f8f8;">  <td style="padding: 10px; border: #e9e9e9 1px solid;"> Техника:</td>   <td style="padding: 10px; border: #e9e9e9 1px solid;">' . implode(", ",$_POST['tech']) . '</b></td></tr>';

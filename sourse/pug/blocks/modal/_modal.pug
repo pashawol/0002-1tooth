@@ -23,7 +23,7 @@ mixin modal()
 					
 				input(type="hidden" class='order' name='order' value="")
 				+form-body()
-				+e.btn.disabled(type='submit') Задать вопрос 
+				+e.btn.disabled(type="submit")(onclick="yaCounter55013233.reachGoal('call-back'); return true;") Задать вопрос 
 				+polite
 	// #modal-doctor
 
@@ -75,7 +75,7 @@ mixin modal()
 					
 				input(type="hidden" class='order' name='order' value="")
 				+form-body()
-				+e.btn(type='submit').disabled Перезвоните мне 
+				+e.btn.disabled(type='submit')(onclick="yaCounter55013233.reachGoal('call-back'); return true;") Перезвоните мне 
 				+polite
 	// #modal-call
  
@@ -95,7 +95,7 @@ mixin modal()
 				input(type="hidden" class='order' name='order' value="")
 				input(type="hidden" class='tooth-numbers-input' name='tooth-numbers-input' value="")
 				+form-body()
-				+e.btn(type='submit').disabled Перезвоните мне 
+				+e.btn.disabled(type="submit")(onclick="yaCounter55013233.reachGoal('call-back'); return true;") Перезвоните мне 
 				+polite
 	// #modal-calc
  
